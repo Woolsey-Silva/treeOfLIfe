@@ -5,24 +5,29 @@
  */
 package byui.cit260.TreeOfLife.model;
 
-import java.io.Serializable;
-
 /**
  *
- * @author ENTELLiJENSE
+ * @author Caleb
  */
-public class Game implements Serializable {
-   private double gameTime;
-   private double RecordTime;
-
-    public Game() {
-    }
+public class Game {
+    private int gameTime;
+    private int faith;
+    private int obedience;
+    private int knowledge;
+    private int honesty;
+    private int righteousness;
+    private int virtue;
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.gameTime) ^ (Double.doubleToLongBits(this.gameTime) >>> 32));
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.RecordTime) ^ (Double.doubleToLongBits(this.RecordTime) >>> 32));
+        int hash = 3;
+        hash = 71 * hash + this.gameTime;
+        hash = 71 * hash + this.faith;
+        hash = 71 * hash + this.obedience;
+        hash = 71 * hash + this.knowledge;
+        hash = 71 * hash + this.honesty;
+        hash = 71 * hash + this.righteousness;
+        hash = 71 * hash + this.virtue;
         return hash;
     }
 
@@ -35,10 +40,25 @@ public class Game implements Serializable {
             return false;
         }
         final Game other = (Game) obj;
-        if (Double.doubleToLongBits(this.gameTime) != Double.doubleToLongBits(other.gameTime)) {
+        if (this.gameTime != other.gameTime) {
             return false;
         }
-        if (Double.doubleToLongBits(this.RecordTime) != Double.doubleToLongBits(other.RecordTime)) {
+        if (this.faith != other.faith) {
+            return false;
+        }
+        if (this.obedience != other.obedience) {
+            return false;
+        }
+        if (this.knowledge != other.knowledge) {
+            return false;
+        }
+        if (this.honesty != other.honesty) {
+            return false;
+        }
+        if (this.righteousness != other.righteousness) {
+            return false;
+        }
+        if (this.virtue != other.virtue) {
             return false;
         }
         return true;
@@ -46,26 +66,66 @@ public class Game implements Serializable {
 
     @Override
     public String toString() {
-        return "Game{" + "gameTime=" + gameTime + ", RecordTime=" + RecordTime + '}';
+        return "Game{" + "gameTime=" + gameTime + ", faith=" + faith + ", obedience=" + obedience + ", knowledge=" + knowledge + ", honesty=" + honesty + ", righteousness=" + righteousness + ", virtue=" + virtue + '}';
     }
 
-   
-   
-    public double getGameTime() {
+    public Game() {
+    }
+
+    public int getGameTime() {
         return gameTime;
     }
 
-    public void setGameTime(double gameTime) {
+    public void setGameTime(int gameTime) {
         this.gameTime = gameTime;
     }
 
-    public double getRecordTime() {
-        return RecordTime;
+    public int getFaith() {
+        return faith;
     }
 
-    public void setRecordTime(double RecordTime) {
-        this.RecordTime = RecordTime;
+    public void setFaith(int faith) {
+        this.faith = faith;
     }
-   
+
+    public int getObedience() {
+        return obedience;
+    }
+
+    public void setObedience(int obedience) {
+        this.obedience = obedience;
+    }
+
+    public int getKnowledge() {
+        return knowledge;
+    }
+
+    public void setKnowledge(int knowledge) {
+        this.knowledge = knowledge;
+    }
+
+    public int getHonesty() {
+        return honesty;
+    }
+
+    public void setHonesty(int honesty) {
+        this.honesty = honesty;
+    }
+
+    public int getRighteousness() {
+        return righteousness;
+    }
+
+    public void setRighteousness(int righteousness) {
+        this.righteousness = righteousness;
+    }
+
+    public int getVirtue() {
+        return virtue;
+    }
+
+    public void setVirtue(int virtue) {
+        this.virtue = virtue;
+    }
     
 }
