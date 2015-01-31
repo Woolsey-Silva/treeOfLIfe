@@ -9,8 +9,12 @@ import byui.cit260.TreeOfLife.model.Armor;
 import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Player;
 import byui.cit260.TreeOfLife.model.Character;
+import byui.cit260.TreeOfLife.model.Contribution;
 import byui.cit260.TreeOfLife.model.InventoryItem;
+import byui.cit260.TreeOfLife.model.Location;
 import byui.cit260.TreeOfLife.model.Map;
+import byui.cit260.TreeOfLife.model.Scene;
+import byui.cit260.TreeOfLife.model.TempleMenuQuestions;
 
 /**
  *
@@ -67,6 +71,34 @@ public class TreeOfLife {
         map1.setRowCount(5);
         testing = map1.toString();
         System.out.println(testing);
+        
+        Contribution contribution1 = new Contribution();
+        contribution1.setAmount(1.1);
+        contribution1.setCategory("Faith");
+        testing = contribution1.toString();
+        System.out.println(testing);
+        
+        Location location1 = new Location();
+        location1.setRow(2);
+        location1.setColumn(3);
+        testing = location1.toString();
+        System.out.println(testing);
+        
+        Scene scene1 = new Scene();
+        scene1.setType("in the swamp");
+        scene1.setDescription("dark and stinky");
+        scene1.setVisted(true);
+        scene1.setBlocked(true);
+        testing = scene1.toString();
+        System.out.println(testing);
+        
+        TempleMenuQuestions templeMenuQuestions1 = new TempleMenuQuestions();
+        templeMenuQuestions1.setQuestion("what comes after 2?");
+        templeMenuQuestions1.setAnswer("3");
+        testing = templeMenuQuestions1.toString();
+        System.out.println(testing);
+        
+        
     }
     
 }
