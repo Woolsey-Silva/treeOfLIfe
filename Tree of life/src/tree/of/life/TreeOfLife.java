@@ -96,9 +96,7 @@ public class TreeOfLife {
         templeMenuQuestions1.setQuestion("what comes after 2?");
         templeMenuQuestions1.setAnswer("3");
         testing = templeMenuQuestions1.toString();
-        System.out.println(testing);
-        
-        
+        System.out.println(testing);      
     }
     
 }

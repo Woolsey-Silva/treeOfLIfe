@@ -40,9 +40,10 @@ public class TempleMenuControlTest {
         TempleMenuControl instance = new TempleMenuControl();
         int expResult = 0;
         int result = instance.askComplexQuestion(correctAnswer, height, length);
+        System.out.println("result: " + result);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
         // Test Case 2
         System.out.println("askComplexQuestion");
         correctAnswer = 0; // This value doesn't matter
@@ -52,7 +53,8 @@ public class TempleMenuControlTest {
         result = instance.askComplexQuestion(correctAnswer, height, length);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    
+        
         // Test Case 3
         System.out.println("askComplexQuestion");
         correctAnswer = 0; // This value doesn't matter
@@ -62,7 +64,8 @@ public class TempleMenuControlTest {
         result = instance.askComplexQuestion(correctAnswer, height, length);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        
         // Test Case 4
         System.out.println("askComplexQuestion");
         correctAnswer = 0; // This value doesn't matter
@@ -72,7 +75,8 @@ public class TempleMenuControlTest {
         result = instance.askComplexQuestion(correctAnswer, height, length);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        
         // Test Case 5
         System.out.println("askComplexQuestion");
         correctAnswer = 24.02;
@@ -82,7 +86,8 @@ public class TempleMenuControlTest {
         result = instance.askComplexQuestion(correctAnswer, height, length);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        
         // Test Case 6
         System.out.println("askComplexQuestion");
         correctAnswer = 8.06;
@@ -92,17 +97,18 @@ public class TempleMenuControlTest {
         result = instance.askComplexQuestion(correctAnswer, height, length);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        
         // Test Case 7
         System.out.println("askComplexQuestion");
-        correctAnswer = 29.30;
+        correctAnswer = 25.30;
         height = 8;
         length = 24;
         expResult = 0;
         result = instance.askComplexQuestion(correctAnswer, height, length);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
     
 }
