@@ -52,4 +52,29 @@ public class TempleMenuControl {
             return 1;
         } 
     }
+    
+    public int askComplexQuestion2(double correctAnswer, int height, int length)
+    {
+          if (!(height >= 1 && height <= 25))
+          {
+              return -1;   
+          }
+          if (!(length >= 1 && length <= 25))
+          {
+              return -2;
+          }
+          
+          int testAnswer = (height * length);
+          
+          if (testAnswer == correctAnswer)
+          {
+              return 0;
+          }
+          else
+          {
+              return 1;
+          }
+            
+          
+    }
 }
