@@ -181,4 +181,80 @@ public class TempleMenuControlTest {
         assertEquals(expResult, result);
     }
     
+    /**
+ *
+ * @author Brett Silva
+ */
+    @Test
+    public void testAskComplexQuestion3() {
+        // Test Case 1
+        System.out.println("askComplexQuestion3");
+        double correctAnswer = 484;
+        int width = 22;
+        int length = 22;
+        TempleMenuControl instance = new TempleMenuControl();
+        int expResult = 0;
+        int result = instance.askComplexQuestion3(correctAnswer, width, length);
+        assertEquals(expResult, result);
+        
+           // Test Case 2
+        System.out.println("askComplexQuestion3");
+        correctAnswer = 0.0;
+        width = 0;
+        length = 22;
+        expResult = -1;
+        result = instance.askComplexQuestion3(correctAnswer, width, length);
+        assertEquals(expResult, result);
+        
+          // Test Case 3
+        System.out.println("askComplexQuestion3");
+        correctAnswer = 0.0;
+        width = 0;
+        length = 22;
+        expResult = -2;
+        result = instance.askComplexQuestion3(correctAnswer, width, length);
+        assertEquals(expResult, result);
+        
+           // Test Case 4
+        System.out.println("askComplexQuestion3");
+        correctAnswer = 0.0;
+        width = 485;
+        length = 485;
+        expResult = -1;
+        result = instance.askComplexQuestion3(correctAnswer, width, length);
+        assertEquals(expResult, result);
+        
+              // Test Case 5
+        System.out.println("askComplexQuestion3");
+        correctAnswer = 484;
+        width = 1;
+        length = 484;
+        expResult = 0;
+        result = instance.askComplexQuestion3(correctAnswer, width, length);
+        assertEquals(expResult, result);
+        
+              // Test Case 6
+        System.out.println("askComplexQuestion3");
+        correctAnswer = 484;
+        width = 484;
+        length = 1;
+        expResult = 0;
+        result = instance.askComplexQuestion3(correctAnswer, width, length);
+        assertEquals(expResult, result);
+        
+              // Test Case 7
+        System.out.println("askComplexQuestion3");
+        correctAnswer = 484;
+        width = 22;
+        length = 22;
+        expResult = 0;
+        result = instance.askComplexQuestion3(correctAnswer, width, length);
+        assertEquals(expResult, result);
+    }
+
+    private void assertEquals(int expResult, int result) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }
+

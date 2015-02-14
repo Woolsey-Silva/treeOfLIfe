@@ -77,4 +77,29 @@ public class TempleMenuControl {
             
           
     }
+
+    public int askComplexQuestion3(double correctAnswer, int width, int length) {
+        
+          if (!(width >= 1 && width <= 484))
+          {
+              return -1;   
+          }
+          if (!(length >= 1 && length <= 484))
+          {
+              return -2;
+          }
+          
+          int testAnswer = (width * length);
+          
+          if (testAnswer == correctAnswer)
+          {
+              return 0;
+          }
+          else
+          {
+              return 1;
+          }
+            
+          
+    }
 }
