@@ -110,5 +110,75 @@ public class TempleMenuControlTest {
         // TODO review the generated test code and remove the default call to fail.
         
     }
+
+    /**
+     * Test of askComplexQuestion2 method, of class TempleMenuControl.
+     */
+    @Test
+    public void testAskComplexQuestion2() {
+        // Test Case 1
+        System.out.println("askComplexQuestion2");
+        double correctAnswer = 25.0;
+        int height = 5;
+        int length = 5;
+        TempleMenuControl instance = new TempleMenuControl();
+        int expResult = 0;
+        int result = instance.askComplexQuestion2(correctAnswer, height, length);
+        assertEquals(expResult, result);
+        
+        // Test Case 2
+        System.out.println("askComplexQuestion2");
+        correctAnswer = 0.0;
+        height = 0;
+        length = 5;
+        expResult = -1;
+        result = instance.askComplexQuestion2(correctAnswer, height, length);
+        assertEquals(expResult, result);
+        
+        // Test Case 3
+        System.out.println("askComplexQuestion2");
+        correctAnswer = 0.0;
+        height = 5;
+        length = 0;
+        expResult = -2;
+        result = instance.askComplexQuestion2(correctAnswer, height, length);
+        assertEquals(expResult, result);
+        
+        // Test Case 4
+        System.out.println("askComplexQuestion2");
+        correctAnswer = 0.0;
+        height = 26;
+        length = 26;
+        expResult = -1;
+        result = instance.askComplexQuestion2(correctAnswer, height, length);
+        assertEquals(expResult, result);
+        
+        // Test Case 5
+        System.out.println("askComplexQuestion2");
+        correctAnswer = 25.0;
+        height = 1;
+        length = 25;
+        expResult = 0;
+        result = instance.askComplexQuestion2(correctAnswer, height, length);
+        assertEquals(expResult, result);
+        
+        // Test Case 6
+        System.out.println("askComplexQuestion2");
+        correctAnswer = 25.0;
+        height = 25;
+        length = 1;
+        expResult = 0;
+        result = instance.askComplexQuestion2(correctAnswer, height, length);
+        assertEquals(expResult, result);
+        
+        // Test Case 7
+        System.out.println("askComplexQuestion2");
+        correctAnswer = 625.0;
+        height = 25;
+        length = 25;
+        expResult = 0;
+        result = instance.askComplexQuestion2(correctAnswer, height, length);
+        assertEquals(expResult, result);
+    }
     
 }
