@@ -6,9 +6,11 @@
 package byui.cit260.TreeOfLife.control;
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.BeforeClass;
 
 /**
  *
@@ -17,6 +19,14 @@ import static org.junit.Assert.*;
 public class TempleMenuControlTest {
     
     public TempleMenuControlTest() {
+    }
+
+    @BeforeClass
+    public static void setUpClass() throws Exception {
+    }
+
+    @AfterClass
+    public static void tearDownClass() throws Exception {
     }
     
     @Before
