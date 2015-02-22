@@ -6,7 +6,7 @@
 package byui.cit260.TreeOfLife.control;
 
 import byui.cit260.TreeOfLife.model.Player;
-
+import tree.of.life.TreeOfLife;
 /**
  *
  * @author ENTELLiJENSE
@@ -14,8 +14,16 @@ import byui.cit260.TreeOfLife.model.Player;
 public class ProgramControl {
 
     public static Player createPlayer(String playersName) {
-        System.out.println("createPlayer was called");
-        return null;
+        
+        if (playersName == null){
+            return null;
+        }
+        Player player = new Player();
+        player.setName(playersName);
+        
+        TreeOfLife.setPlayer(player);
+        
+        return player;
     }
     
 }

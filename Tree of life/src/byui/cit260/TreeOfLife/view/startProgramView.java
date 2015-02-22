@@ -28,6 +28,8 @@ public class startProgramView {
         //Display personalized welcome message
         this.displayWelcomeMessage(player);
         //Display main menu
+        mainMenuView mainMenu = new mainMenuView();
+        mainMenu.displayMenu();
         
     }
 
