@@ -26,11 +26,12 @@ public class startProgramView {
         //Create and save the player object
         Player player = ProgramControl.createPlayer(playersName);
         //Display personalized welcome message
+        this.displayWelcomeMessage(player);
         //Display main menu
         
     }
 
-    private void displayBanner() {
+    public void displayBanner() {
         
         System.out.println("\n\n*****************************************");
         System.out.println("\n* This is the Tree of Life                *");
@@ -43,7 +44,7 @@ public class startProgramView {
         System.out.println("\n* *****************************************");
     }
 
-    private String getPlayersName() {
+    public String getPlayersName() {
          boolean valid = false;
          String playerName = null;
          Scanner keyboard = new Scanner(System.in);
@@ -62,5 +63,10 @@ public class startProgramView {
          return playerName;
     }
 
-    
-}
+    public void displayWelcomeMessage(Player player) {
+     System.out.println("\n\n======================================");
+     System.out.println("\tWelcome to the game " + player.getName());
+     System.out.println("\tWe hope you have a lot of fun!");
+     System.out.println("======================================");
+    }
+}  

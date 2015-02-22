@@ -14,7 +14,7 @@ import byui.cit260.TreeOfLife.model.Player;
 public class ProgramControl {
 
     public static Player createPlayer(String playersName) {
-        System.out.println("reatePlayer was called");
+        System.out.println("createPlayer was called");
         return null;
     }
     
