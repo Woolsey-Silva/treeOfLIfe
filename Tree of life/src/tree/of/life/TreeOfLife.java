@@ -23,6 +23,7 @@ public class TreeOfLife {
     public static void main(String[] args) {
         startProgramView startProgramView = new startProgramView();
         startProgramView.startProgram();
+        
     }
 
     public static Game getCurrentGame() {

@@ -14,7 +14,9 @@ import byui.cit260.TreeOfLife.model.Player;
 public class GameControl {
 
     public static void createNewGame(Player player) {
-        System.out.println("function is called");
+        System.out.println("createNewGame function was called"
+                + "\nThe game will now ask you a temple menu question for"
+                + "\ntesting purposes!");
     }
     
 }

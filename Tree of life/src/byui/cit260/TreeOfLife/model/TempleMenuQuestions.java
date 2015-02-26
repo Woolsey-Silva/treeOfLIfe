@@ -15,7 +15,7 @@ import java.util.Objects;
 public class TempleMenuQuestions implements
 Serializable{
     private String question;
-    private String answer;
+    private double answer;
 
     public TempleMenuQuestions() {
     }
@@ -30,11 +30,11 @@ Serializable{
         this.question = question;
     }
 
-    public String getAnswer() {
+    public double getAnswer() {
         return answer;
     }
 
-    public void setAnswer(String answer) {
+    public void setAnswer(double answer) {
         this.answer = answer;
     }
 

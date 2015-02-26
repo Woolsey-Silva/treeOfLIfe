@@ -19,7 +19,8 @@ public class mainMenuView {
             +"\n----------------------------------------------"
             +"\n| Main Menu                                  |"
             +"\n----------------------------------------------"
-            +"\nG - Start game"
+            +"\nN - Start a new game"
+            +"\nG - Start an existing game"
             +"\nH - Get help on how to play the game"
             +"\nS - Save"
             +"\nE - Exit"
@@ -96,9 +97,13 @@ public class mainMenuView {
 
     private void startNewgame() {
         GameControl.createNewGame(TreeOfLife.getPlayer());
-    
-    GameMenuView gameMenu = new GameMenuView();
-    gameMenu.dispayMenu();
+            
+        askComplexQuestion1 askComplexQuestion1 = new askComplexQuestion1();
+        askComplexQuestion1.run();
+        
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.dispayMenu();
     }
     
 }

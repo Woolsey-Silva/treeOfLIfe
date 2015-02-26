@@ -35,15 +35,15 @@ public class startProgramView {
 
     public void displayBanner() {
         
-        System.out.println("\n\n*****************************************");
-        System.out.println("\n* This is the Tree of Life                *");
-        System.out.println("\n* IN this game you will try to hold on to *");
-        System.out.println("\n* the iron rod long enought o get to the  *");
-        System.out.println("\n* Tree of Live.                           *");
-        System.out.println("\n* There are pitfalls along the way but    *");
-        System.out.println("\n* you can earn armor to protect you from  *"
-                          +"\n* the firey darts of the adversary.       *");
-        System.out.println("\n* *****************************************");
+        System.out.println("*****************************************");
+        System.out.println("*This is the Tree of Life               *");
+        System.out.println("*In this game you will try to hold on to*");
+        System.out.println("*the iron rod long enought o get to the *");
+        System.out.println("*Tree of Live.                          *");
+        System.out.println("*There are pitfalls along the way but   *");
+        System.out.println("*you can earn armor to protect you from *");
+        System.out.println("*the firey darts of the adversary.      *");
+        System.out.println("*****************************************");
     }
 
     public String getPlayersName() {
@@ -67,8 +67,8 @@ public class startProgramView {
 
     public void displayWelcomeMessage(Player player) {
      System.out.println("\n\n======================================");
-     System.out.println("\tWelcome to the game " + player.getName());
-     System.out.println("\tWe hope you have a lot of fun!");
+     System.out.println("    Welcome to the game " + player.getName());
+     System.out.println("    We hope you have a lot of fun!");
      System.out.println("======================================");
     }
 }  
