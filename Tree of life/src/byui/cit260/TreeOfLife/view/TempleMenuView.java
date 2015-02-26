@@ -5,23 +5,23 @@
  */
 package byui.cit260.TreeOfLife.view;
 
-import byui.cit260.TreeOfLife.control.GameControl;
+
 import java.util.Scanner;
-import tree.of.life.TreeOfLife;
 
 
 /**
  *
  * @author ENTELLiJENSE
  */
-public class mainMenuView {
+public class TempleMenuView {
+    
     private final String MENU = "\n"
             +"\n----------------------------------------------"
-            +"\n| Main Menu                                  |"
+            +"\n| Temple Menu Questions                                  |"
             +"\n----------------------------------------------"
-            +"\nG - Start game"
-            +"\nH - Get help on how to play the game"
-            +"\nS - Save"
+            +"\nG - Get Question"
+            +"\nS - Skip Question"
+            +"\nH - Help"
             +"\nE - Exit"
             +"\n----------------------------------------------";
     
@@ -58,17 +58,11 @@ public class mainMenuView {
     public void doAction(char choice) {
         
         switch (choice){
-            case 'N':
-                this.startNewgame();
-                break;
             case 'G':
-                this.startExistingGame();
+                this.GetQuestion();
                 break;
             case 'H':
-                this.displayHelpMenu();
-                break;
-            case 'S':
-                this.saveGame();
+                this.TempleHelp();
                 break;
             case 'E':
                 return;
@@ -81,26 +75,19 @@ public class mainMenuView {
         }
     }  
 
-    private void saveGame() {
-        // for test purposes I made save functions link to the templeMenuView
-        TempleMenuView templeMenu = new TempleMenuView();
-        templeMenu.displayMenu();
-    }
+        private void GetQuestion() {
+           GetQuestion getQuestion = new GetQuestion();
+           getQuestion.displayQuestion();
+        }
 
-    private void displayHelpMenu() {
-        HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
-    }
-
-    private void startExistingGame() {
-        System.out.println("function was called");
-    }
-
-    private void startNewgame() {
-        GameControl.createNewGame(TreeOfLife.getPlayer());
+        private void TempleHelp() {
+           TempleHelp templeHelp = new TempleHelp();
+           templeHelp.displayMenu();
+        }
     
-    GameMenuView gameMenu = new GameMenuView();
-    gameMenu.dispayMenu();
+   
     }
     
-}
+
+    
+
