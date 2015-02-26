@@ -83,7 +83,9 @@ public class mainMenuView {
     }  
 
     private void saveGame() {
-        System.out.println("function was called");
+        // for test purposes I made save functions link to the templeMenuView
+        TempleMenuView templeMenu = new TempleMenuView();
+        templeMenu.displayMenu();
     }
 
     private void displayHelpMenu() {
