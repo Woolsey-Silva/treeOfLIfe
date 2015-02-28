@@ -38,7 +38,7 @@ public class TempleMenuControlTest {
         int length = 5;
         TempleMenuControl instance = new TempleMenuControl();
         int expResult = 0;
-        int result = instance.calculateComplexQuestion(correctAnswer, height, length);
+        int result = instance.askComplexQuestion(correctAnswer, height, length);
         assertEquals(expResult, result);
     }
 
@@ -53,7 +53,7 @@ public class TempleMenuControlTest {
         int length = 5;
         TempleMenuControl instance = new TempleMenuControl();
         int expResult = 0;
-        int result = instance.calculateComplexQuestion2(correctAnswer, height, length);
+        int result = instance.askComplexQuestion2(correctAnswer, height, length);
         assertEquals(expResult, result);
     }
 
@@ -68,7 +68,7 @@ public class TempleMenuControlTest {
         int length = 5;
         TempleMenuControl instance = new TempleMenuControl();
         int expResult = 0;
-        int result = instance.calculateComplexQuestion3(correctAnswer, width, length);
+        int result = instance.askComplexQuestion3(correctAnswer, width, length);
         assertEquals(expResult, result);
     
     }
