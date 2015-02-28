@@ -12,8 +12,7 @@ import java.util.Objects;
  *
  * @author ENTELLiJENSE
  */
-public class TempleMenuQuestions implements
-Serializable{
+public class TempleMenuQuestions implements Serializable{
     private String question;
     private double answer;
 

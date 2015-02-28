@@ -5,13 +5,25 @@
  */
 package byui.cit260.TreeOfLife.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Caleb
  */
-public class Armor {
+
+// To make a JavaBean
+// 1) Implements Serializable
+// 2) Has a default zero arg constructor
+// 3) Has getters and setters for every attribute
+// These make a Javabean
+// 3 Recommended functions are toString, hashCode, and equals
+// toString outs the information of the attributes in a user friendly way
+// hashCode is used to create a single 32 bit signed int to create data structures
+// equals is used to test to see if one object is equal to another
+
+public class Armor implements Serializable{
     private String type;
     private String description;
     private String name;

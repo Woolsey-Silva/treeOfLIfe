@@ -76,9 +76,6 @@ public class mainMenuView {
             default:
                 System.out.println("\n**** invalid selection ***** try again");
                 break;
-                
-            
-                
         }
     }  
 

@@ -11,8 +11,7 @@ import java.io.Serializable;
  *
  * @author ENTELLiJENSE
  */
-public class Location implements
-Serializable{
+public class Location implements Serializable{
     private double row;
     private double column;
 

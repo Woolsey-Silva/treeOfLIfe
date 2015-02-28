@@ -5,13 +5,14 @@
  */
 package byui.cit260.TreeOfLife.model;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author Caleb
  */
-public class InventoryItem {
+public class InventoryItem implements Serializable{
     private String name;
     private String itemDescription;
 

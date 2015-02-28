@@ -5,11 +5,13 @@
  */
 package byui.cit260.TreeOfLife.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Caleb
  */
-public class Map {
+public class Map implements Serializable{
     private int rowCount;
     private int colCount;
 

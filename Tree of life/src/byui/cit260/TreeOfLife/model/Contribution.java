@@ -12,8 +12,7 @@ import java.util.Objects;
  *
  * @author ENTELLiJENSE
  */
-public class Contribution implements
-Serializable{
+public class Contribution implements Serializable{
    
     private double amount;
     private String category;

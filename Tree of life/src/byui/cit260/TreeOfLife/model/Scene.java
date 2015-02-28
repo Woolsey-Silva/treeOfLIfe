@@ -12,8 +12,7 @@ import java.util.Objects;
  *
  * @author ENTELLiJENSE
  */
-public class Scene implements
-Serializable{
+public class Scene implements Serializable{
    private String type;
    private String description;
    private boolean visted;

@@ -5,11 +5,13 @@
  */
 package byui.cit260.TreeOfLife.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Caleb
  */
-public class Game {
+public class Game implements Serializable{
     private int gameTime;
     private int faith;
     private int obedience;
