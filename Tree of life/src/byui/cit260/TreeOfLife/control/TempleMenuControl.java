@@ -14,7 +14,7 @@ import java.math.RoundingMode;
  * @author Caleb
  */
 public class TempleMenuControl {
-    public int calculateComplexQuestion(double correctAnswer, int height, int length)
+    public int askComplexQuestion(double correctAnswer, int height, int length)
     {
         // Test for invalid inputs
         if (!(height >= 1 && height <= 8))
@@ -49,7 +49,7 @@ public class TempleMenuControl {
         } 
     }
     
-    public int calculateComplexQuestion2(double correctAnswer, int height, int length)
+    public int askComplexQuestion2(double correctAnswer, int height, int length)
     {
           if (!(height >= 1 && height <= 25))
           {
@@ -74,7 +74,7 @@ public class TempleMenuControl {
           
     }
 
-    public int calculateComplexQuestion3(double correctAnswer, int width, int length) {
+    public int askComplexQuestion3(double correctAnswer, int width, int length) {
         
           if (!(width >= 1 && width <= 484))
           {

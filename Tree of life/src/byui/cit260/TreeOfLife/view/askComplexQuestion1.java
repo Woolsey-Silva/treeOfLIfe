@@ -37,7 +37,7 @@ public class askComplexQuestion1 {
         while (loop != 0 && timesAsked < 3) {
             height = getHeight();
             width = getWidth();
-            loop = calculateComplexQuestion1.calculateComplexQuestion(correctAnswer, height, width);
+            loop = calculateComplexQuestion1.askComplexQuestion(correctAnswer, height, width);
             if (loop != 0 && timesAsked != 2) {
                 System.out.println("Sorry! You got the answer incorrect! Try again!\n");
             }
