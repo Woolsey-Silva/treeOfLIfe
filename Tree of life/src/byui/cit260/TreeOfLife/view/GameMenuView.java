@@ -23,12 +23,12 @@ class GameMenuView {
     private final String MENU = "\n"
             +"\n----------------------------------------------"
             +"\n| Game Menu                                  |"
-            +"\n----------------------------------------------"
-            +"\n|H - Get help on how to play the game         |"
-            +"\n|M - Show Map                                 |"
-            +"\n|S - Save Game                                |"
-            +"\n|Q - Quit Game                                |"
-            +"\n|E - Exit Game Menu                           |"
+            +"\n|--------------------------------------------|"
+            +"\n|H - Get help on how to play the game        |"
+            +"\n|M - Show Map (Begin Game)                   |"
+            +"\n|S - Save Game                               |"
+            +"\n|Q - Quit Game                               |"
+            +"\n|E - Exit Game Menu                          |"
             +"\n----------------------------------------------";
     
     public void displayIntro() {
