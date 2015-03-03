@@ -80,9 +80,8 @@ public class mainMenuView {
     }  
 
     private void saveGame() {
-        // for test purposes I made save functions link to the templeMenuView
-        TempleMenuView templeMenu = new TempleMenuView();
-        templeMenu.displayMenu();
+        System.out.println("saveGame() FUNCTION WAS CALLED! THIS FUNCTION NEEDS"
+                + "\nTO BE FINISHED!");
     }
 
     private void displayHelpMenu() {
@@ -91,17 +90,17 @@ public class mainMenuView {
     }
 
     private void startExistingGame() {
-        System.out.println("function was called");
+        System.out.println("startExistingGame() FUNCTION WAS CALLED! THIS"
+                + "\nFUNCTION NEEDS TO BE FINISHED!");
     }
 
     private void startNewgame() {
         GameControl.createNewGame(TreeOfLife.getPlayer());
-            
-        askComplexQuestion1 askComplexQuestion1 = new askComplexQuestion1();
-        askComplexQuestion1.run();
+        
         
         
         GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayIntro();
         gameMenu.dispayMenu();
     }
     
