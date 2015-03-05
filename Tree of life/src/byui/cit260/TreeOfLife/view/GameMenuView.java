@@ -35,7 +35,7 @@ class GameMenuView {
         System.out.println(INTRO);
     }
     
-    public void dispayMenu() {
+    public void displayMenu() {
         char selection = ' ';
         do {
             System.out.println(MENU);

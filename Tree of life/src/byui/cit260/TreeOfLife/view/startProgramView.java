@@ -5,18 +5,13 @@
  */
 package byui.cit260.TreeOfLife.view;
 
-import byui.cit260.TreeOfLife.control.GameControl;
 import byui.cit260.TreeOfLife.control.ProgramControl;
 import byui.cit260.TreeOfLife.model.Player;
 import java.util.Scanner;
 
-/**
- *
- * @author ENTELLiJENSE
- */
 public class startProgramView {
 
-    public startProgramView() {
+    public void startProgramView() {
     }
     public void startProgram() {
         //Display the banner screen
@@ -29,8 +24,7 @@ public class startProgramView {
         this.displayWelcomeMessage(player);
         //Display main menu
         mainMenuView mainMenu = new mainMenuView();
-        mainMenu.displayMenu();
-        
+        mainMenu.display();
     }
 
     public void displayBanner() {

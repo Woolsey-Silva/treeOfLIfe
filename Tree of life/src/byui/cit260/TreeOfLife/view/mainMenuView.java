@@ -1,21 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package byui.cit260.TreeOfLife.view;
 
 import byui.cit260.TreeOfLife.control.GameControl;
-import java.util.Scanner;
 import tree.of.life.TreeOfLife;
 
-
-/**
- *
- * @author ENTELLiJENSE
- */
-public class mainMenuView {
-    private final String MENU = "\n"
+public class mainMenuView extends View {
+    
+    public mainMenuView(String promptMessage) {
+        super("\n"
             +"\n----------------------------------------------"
             +"\n| Main Menu                                  |"
             +"\n----------------------------------------------"
@@ -24,39 +16,18 @@ public class mainMenuView {
             +"\nH - Get help on how to play the game"
             +"\nS - Save"
             +"\nE - Exit"
-            +"\n----------------------------------------------";
+            +"\n----------------------------------------------");
+    }
+
     
-    void displayMenu() {
-       char selection = ' ';
-       do {
-           System.out.println(MENU);
-           String input = this.getInput();
-           selection = input.charAt(0);
-           
-           
-           this.doAction(selection);
-       }while (selection != 'E');
-       
-    }
-    public String getInput() {
-         boolean valid = false;
-         String input = null;
-         Scanner keyboard = new Scanner(System.in);
-         
-         while(!valid) {
-            System.out.println("What would you like to do?: ");
-            
-            input =keyboard.nextLine();
-            input = input.trim();
-            
-            if(input.length()<1) {
-             System.out.println("invalid Input - The input must not be blank");
-            }
-            break;
-        }
-         return input;
-    }
-    public void doAction(char choice) {
+    
+    @Override
+    public boolean doAction(Object obj) {
+        
+        String value = (String)obj;
+        
+        value = value.toUpperCase();
+        char choice = value.charAt(0);
         
         switch (choice){
             case 'N':
@@ -72,11 +43,12 @@ public class mainMenuView {
                 this.saveGame();
                 break;
             case 'E':
-                return;
+                return true;
             default:
                 System.out.println("\n**** invalid selection ***** try again");
                 break;
         }
+        return false;
     }  
 
     private void saveGame() {
@@ -101,7 +73,6 @@ public class mainMenuView {
         
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.displayIntro();
-        gameMenu.dispayMenu();
+        gameMenu.displayMenu();
     }
-    
 }
