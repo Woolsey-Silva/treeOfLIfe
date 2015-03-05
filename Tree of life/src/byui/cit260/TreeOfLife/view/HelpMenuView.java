@@ -11,8 +11,9 @@ import java.util.Scanner;
  *
  * @author ENTELLiJENSE
  */
-public class HelpMenuView {
-    private final String MENU = "\n"
+public class HelpMenuView extends View {
+    public HelpMenuView() {
+        super("\n"
             +"\n----------------------------------------------"
             +"\n| Help Menu                                  |"
             +"\n----------------------------------------------"
@@ -21,63 +22,35 @@ public class HelpMenuView {
             +"\nF- How to forge armor"
             +"\nT- What are Temple Menu questions"
             +"\nE - Exit"
-            +"\n----------------------------------------------";
+            +"\n----------------------------------------------");
+    }
     
-    void displayMenu() {
-       char selection = ' ';
-       do {
-           System.out.println(MENU);
-           String input = this.getInput();
-           selection = input.charAt(0);
-           
-           
-           this.doAction(selection);
-       }while (selection != 'E');
-       
-    }
-    public String getInput() {
-         boolean valid = false;
-         String input = null;
-         Scanner keyboard = new Scanner(System.in);
-         
-         while(!valid) {
-            System.out.println("What would you like to do?: ");
-            
-            input =keyboard.nextLine();
-            input = input.trim();
-            
-            if(input.length()<1) {
-             System.out.println("invalid Input - The input must not be blank");
-            }
-            break;
-        }
-         return input;
-    }
-    public void doAction(char choice) {
-        
+    
+   
+    @Override
+    public boolean doAction(Object obj) {
+        String choice = (String)obj;
         switch (choice){
-            case 'G':
+            case "G":
                 this.goalHelp();
                 break;
-            case 'M':
+            case "M":
                 this.moveHelp();
                 break;
-            case 'F':
+            case "F":
                 this.forgeHelp();
                 break;
-            case 'T':
+            case "T":
                 this.templeHelp();
                 break;
-            case 'E':
-                return;
+            case "E":
+                return true;
             default:
-                System.out.println("\n**** invalid selection ***** try again");
+                System.out.println("\nINVALID SELECTION! Try again!");
                 break;
-                
-            
-                
         }
-    }  
+        return false;
+    }
 
     private void goalHelp() {
         System.out.println("\n\nThe goal of the game is to answer the questions"

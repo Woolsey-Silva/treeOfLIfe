@@ -4,9 +4,6 @@ import java.util.Scanner;
 
 public abstract class View implements ViewInterface {
     private String promptMessage;
-
-    public View() {
-    }
     
     public View(String promptMessage) {
         this.promptMessage = promptMessage;

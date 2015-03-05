@@ -17,12 +17,11 @@ public class TempleMenuView {
     
     private final String MENU = "\n"
             +"\n----------------------------------------------"
-            +"\n| Temple Menu Questions                                  |"
-            +"\n----------------------------------------------"
-            +"\nG - Get Question"
-            +"\nS - Skip Question"
-            +"\nH - Help"
-            +"\nE - Exit"
+            +"\n| Temple Menu Questions                      |"
+            +"\n|---------------------------------------------"
+            +"\n|G - Get Question                            |"
+            +"\n|S - Skip Question                           |"
+            +"\n|E - Exit                                    |"
             +"\n----------------------------------------------";
     
     void displayMenu() {
@@ -59,10 +58,7 @@ public class TempleMenuView {
         
         switch (choice){
             case 'G':
-                this.GetQuestion();
-                break;
-            case 'H':
-                this.TempleHelp();
+                this.askQuestionView();
                 break;
             case 'E':
                 return;
@@ -75,15 +71,9 @@ public class TempleMenuView {
         }
     }  
 
-        private void GetQuestion() {
-           GetQuestion getQuestion = new GetQuestion();
-           getQuestion.displayQuestion();
+        private void askQuestionView() {
+           askQuestionView askQuestion = new askQuestionView();
+           askQuestion.display();
         }
-
-        private void TempleHelp() {
-           TempleHelp templeHelp = new TempleHelp();
-           templeHelp.displayMenu();
-        }
-    
    
     }

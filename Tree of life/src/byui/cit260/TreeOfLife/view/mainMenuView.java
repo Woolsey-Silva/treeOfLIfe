@@ -6,7 +6,7 @@ import tree.of.life.TreeOfLife;
 
 public class mainMenuView extends View {
     
-    public mainMenuView(String promptMessage) {
+    public mainMenuView() {
         super("\n"
             +"\n----------------------------------------------"
             +"\n| Main Menu                                  |"
@@ -58,7 +58,7 @@ public class mainMenuView extends View {
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayMenu();
+        helpMenu.display();
     }
 
     private void startExistingGame() {
@@ -70,9 +70,15 @@ public class mainMenuView extends View {
         GameControl.createNewGame(TreeOfLife.getPlayer());
         
         
-        
+        System.out.println("\n\n\nYou awake in a large, dark, and dreary"
+            + "\nwilderness. You see a group of people holding onto a rod made of"
+            + "\niron heading towards a great source of light on the horizon. You"
+            + "\nsee a sign in front of you. It reads:"
+            + "\n'Use the books in your hand to help guide your way and avoid"
+            + "\nthe pitfall along the way. Remember: DON'T LET GO OF THE ROD!'"
+            + "\nYou look in your hand and see a book entitled 'The Book of"
+            + "\nMormon'.");
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayIntro();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 }
