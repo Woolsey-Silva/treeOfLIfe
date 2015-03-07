@@ -10,5 +10,7 @@ package byui.cit260.TreeOfLife.control;
  * @author Caleb
  */
 public class forgeArmor {
-    
+    public void setUp() {
+        System.out.println("setUp() function was run. NEEDS TO BE FINISHED!");
+    }
 }

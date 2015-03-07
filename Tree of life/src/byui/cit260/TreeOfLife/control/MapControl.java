@@ -10,5 +10,7 @@ package byui.cit260.TreeOfLife.control;
  * @author Caleb
  */
 public class MapControl {
-    
+        public void move() {
+            System.out.println("move() function was called. NEEDS TO BE FINISHED!");
+        }
 }

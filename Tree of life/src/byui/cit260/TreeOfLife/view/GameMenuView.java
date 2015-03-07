@@ -1,16 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.TreeOfLife.view;
 
+import byui.cit260.TreeOfLife.model.Map;
 import java.util.Scanner;
 
-/**
- *
- * @author ENTELLiJENSE
- */
 public class GameMenuView extends View {
     public GameMenuView() {
         super("\n"
@@ -52,7 +44,12 @@ public class GameMenuView extends View {
     }
 
     private void showMap() {
-        System.out.println("showMap function was called");
+        Map map = new Map();
+        map.setColCount(3);
+        map.setRowCount(3);
+        
+        MapView mapView = new MapView();
+        mapView.display();
     }
 
     private void saveGame() {
