@@ -29,7 +29,7 @@ public class MapView extends View{
             +"\n----------------------------------------------"
             +"\n|M - Move to new location                    |"
             +"\n|F - Set up the forge                        |"
-            +"\n|E - Exit the Map Vie                        |"
+            +"\n|E - Exit the Map View                        |"
             +"\n----------------------------------------------");
     }
     

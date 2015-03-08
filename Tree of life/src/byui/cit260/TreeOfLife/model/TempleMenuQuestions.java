@@ -67,6 +67,10 @@ public class TempleMenuQuestions implements Serializable{
         }
         return true;
     }
+
+    public void setAnswer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     
