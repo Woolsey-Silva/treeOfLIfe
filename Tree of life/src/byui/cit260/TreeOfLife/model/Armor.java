@@ -23,87 +23,50 @@ import java.util.Objects;
 // hashCode is used to create a single 32 bit signed int to create data structures
 // equals is used to test to see if one object is equal to another
 
-public class Armor implements Serializable{
-    private String type;
-    private String description;
-    private String name;
-    private String category;
-
-    public Armor() {
-    }
-
-    @Override
-    public String toString() {
-        return "Armor{" + "type=" + type + ", description=" + description + ", name=" + name + ", category=" + category + '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 59 * hash + Objects.hashCode(this.type);
-        hash = 59 * hash + Objects.hashCode(this.description);
-        hash = 59 * hash + Objects.hashCode(this.name);
-        hash = 59 * hash + Objects.hashCode(this.category);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Armor other = (Armor) obj;
-        if (!Objects.equals(this.type, other.type)) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.category, other.category)) {
-            return false;
-        }
-        return true;
-    }
+public enum Armor implements Serializable{
+    
+    helmetOfKnoweldge(""),
+    shieldOfFaith(""),
+    beltOfVirtue(""),
+    bootsOfObedinece(""),
+    swordOfHonesty(""),
+    BreastPlateOfRighteousness("");
     
     
+    private final String description;
+    //private final String category; 
+    
+    private Game game;
+    private Character character;
 
-    public String getType() {
-        return type;
+    Armor(String description) {
+    this.description = description;
+    //Category = new Category;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getCategory() {
+    /*public String getCategory() {
         return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
+    }*/
     
     
 }

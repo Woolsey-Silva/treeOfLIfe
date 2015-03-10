@@ -12,6 +12,7 @@ import java.io.Serializable;
  * @author Caleb
  */
 public class Game implements Serializable{
+
     private int gameTime;
     private int faith;
     private int obedience;
@@ -20,6 +21,13 @@ public class Game implements Serializable{
     private int righteousness;
     private int virtue;
 
+    private Character[] character;
+    private Player player;
+    private InventoryItem[] inventoryItem;
+    private Map map;
+    private Armor[] armor;
+    
+    
     @Override
     public int hashCode() {
         int hash = 3;
@@ -129,5 +137,46 @@ public class Game implements Serializable{
     public void setVirtue(int virtue) {
         this.virtue = virtue;
     }
+
+    public Character[] getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character[] character) {
+        this.character = character;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public InventoryItem[] getInventoryItem() {
+        return inventoryItem;
+    }
+
+    public void setInventoryItem(InventoryItem[] inventoryItem) {
+        this.inventoryItem = inventoryItem;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public Armor[] getArmor() {
+        return armor;
+    }
+
+    public void setArmor(Armor[] armor) {
+        this.armor = armor;
+    }
+    
     
 }

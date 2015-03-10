@@ -15,7 +15,8 @@ import java.util.Objects;
 public class Player implements Serializable{
     private String name;
     private double recordTime;
-
+    private Game[] game;
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -64,6 +65,14 @@ public class Player implements Serializable{
 
     public void setRecordTime(double recordTime) {
         this.recordTime = recordTime;
+    }
+
+    public Game[] getGame() {
+        return game;
+    }
+
+    public void setGame(Game[] game) {
+        this.game = game;
     }
     
     

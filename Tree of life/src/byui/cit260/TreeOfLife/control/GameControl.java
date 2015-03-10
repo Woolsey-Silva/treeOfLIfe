@@ -5,7 +5,13 @@
  */
 package byui.cit260.TreeOfLife.control;
 
+import byui.cit260.TreeOfLife.model.Armor;
+import byui.cit260.TreeOfLife.model.Game;
+import byui.cit260.TreeOfLife.model.Character;
+import byui.cit260.TreeOfLife.model.InventoryItem;
+import byui.cit260.TreeOfLife.model.Map;
 import byui.cit260.TreeOfLife.model.Player;
+import tree.of.life.TreeOfLife;
 
 /**
  *
@@ -14,9 +20,48 @@ import byui.cit260.TreeOfLife.model.Player;
 public class GameControl {
 
     public static void createNewGame(Player player) {
-        System.out.println("createNewGame function was called"
-                + "\nThe game will now ask you a temple menu question for"
-                + "\ntesting purposes!");
+        Game game = new Game();
+        TreeOfLife.setCurrentGame(game);
+        
+        game.setPlayer(player);
+        
+        InventoryItem[] inventoryList = GameControl.createInventoryList();
+        game.setInventoryItem(inventoryList);
+        
+        Character[] character = GameControl.createCharacterList();
+        game.setCharacter(character);
+        
+        Map map = MapControl.createMap();
+        game.setMap(map);
+        
+        Armor[] armor = GameControl.armorList();
+        game.setArmor(armor); 
+        
+        
+        
     }
+
+    private static InventoryItem[] createInventoryList() {
+        /*InventoryItem[] inventory =
+                new InventoryItem[30]*/
+        
+        //ask bro jackson about the items 
+        
+                System.out.println("character list was called ");
+        return null;
+        
+    }
+
+    private static Character[] createCharacterList() {
+        System.out.println("character list was called ");
+        return null;
+    }
+
+    private static Armor[] armorList() {
+        System.out.println("armor list was called ");
+        return null;
+    }
+
+    
     
 }

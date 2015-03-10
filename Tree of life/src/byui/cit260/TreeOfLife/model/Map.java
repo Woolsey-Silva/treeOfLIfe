@@ -15,7 +15,31 @@ public class Map implements Serializable{
     private int rowCount;
     private int colCount;
 
+    private Location[][] locations;
+    
     public Map() {
+    }
+
+    public Map(int noOfRows, int noOfColumns) {
+        if(noOfRows < 1 || noOfColumns < 1){
+            System.out.println("you are dumb");
+            return;
+        }
+        this.rowCount = noOfRows;
+        this.colCount = noOfColumns;
+        
+        this.locations =new Location[noOfRows][noOfColumns];
+        
+        for(int row =0; row < noOfRows; row++) {
+            for(int column =0; column < noOfColumns; column++){
+            
+            Location location =new Location();
+            location.setColumn(column);
+            location.setRow(row);
+            locations[row][column] = location;
+            }
+        }
+        
     }
 
     @Override

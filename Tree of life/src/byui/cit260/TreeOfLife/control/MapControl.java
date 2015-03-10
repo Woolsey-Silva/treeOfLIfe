@@ -5,11 +5,22 @@
  */
 package byui.cit260.TreeOfLife.control;
 
+import byui.cit260.TreeOfLife.model.Map;
+
 /**
  *
  * @author Caleb
  */
 public class MapControl {
+
+    private static Map createMap() {
+       Map map = new Map(5,5);
+       
+       Scene[] scenes = createScenes();
+       
+       GameControl.assignScenesToLocation(map,scenes);
+       return map;
+    }
         public void move() {
             System.out.println("move() function was called. NEEDS TO BE FINISHED!");
         }
