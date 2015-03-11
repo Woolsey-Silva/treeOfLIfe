@@ -1,23 +1,45 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.TreeOfLife.model;
 
 import java.io.Serializable;
 
-/**
- *
- * @author ENTELLiJENSE
- */
+
 public class Location implements Serializable{
     private double row;
     private double column;
-
     private Scene scene;
+    private Item itemInLocation;
+    private Question questionInLocation;
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public Item getItemInLocation() {
+        return itemInLocation;
+    }
+
+    public void setItemInLocation(Item itemInLocation) {
+        this.itemInLocation = itemInLocation;
+    }
+
+    public Question getQuestionInLocation() {
+        return questionInLocation;
+    }
+
+    public void setQuestionInLocation(Question questionInLocation) {
+        this.questionInLocation = questionInLocation;
+    }
     
     public Location() {
+    }
+    
+    public Location(double row, double column) {
+        this.row = row;
+        this.column = column;
     }
 
     public double getRow() {

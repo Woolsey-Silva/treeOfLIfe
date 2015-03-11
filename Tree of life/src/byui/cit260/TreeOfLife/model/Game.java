@@ -1,16 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.TreeOfLife.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
-/**
- *
- * @author Caleb
- */
 public class Game implements Serializable{
 
     private int gameTime;
@@ -20,10 +12,10 @@ public class Game implements Serializable{
     private int honesty;
     private int righteousness;
     private int virtue;
-
-    private Character[] character;
+    
     private Player player;
-    private InventoryItem[] inventoryItem;
+    private ArrayList<Item> backpack;
+    private Item[] gameItems;
     private Map map;
     private Armor[] armor;
     
@@ -138,14 +130,6 @@ public class Game implements Serializable{
         this.virtue = virtue;
     }
 
-    public Character[] getCharacter() {
-        return character;
-    }
-
-    public void setCharacter(Character[] character) {
-        this.character = character;
-    }
-
     public Player getPlayer() {
         return player;
     }
@@ -154,12 +138,12 @@ public class Game implements Serializable{
         this.player = player;
     }
 
-    public InventoryItem[] getInventoryItem() {
-        return inventoryItem;
+    public ArrayList<Item> getBackpack() {
+        return backpack;
     }
 
-    public void setInventoryItem(InventoryItem[] inventoryItem) {
-        this.inventoryItem = inventoryItem;
+    public void setBackpack(ArrayList<Item> backpack) {
+        this.backpack = backpack;
     }
 
     public Map getMap() {

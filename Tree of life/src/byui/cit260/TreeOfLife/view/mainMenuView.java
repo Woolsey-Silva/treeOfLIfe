@@ -67,6 +67,9 @@ public class mainMenuView extends View {
     }
 
     private void startNewgame() {
+        
+        // IMPLEMENT THE CHOOSECHARACTERVIEW()
+        
         GameControl.createNewGame(TreeOfLife.getPlayer());
         
         

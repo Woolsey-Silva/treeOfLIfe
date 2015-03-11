@@ -1,39 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.TreeOfLife.model;
 
 import java.io.Serializable;
 
-/**
- *
- * @author Caleb
- */
+
 public class Map implements Serializable{
     private int rowCount;
     private int colCount;
-
     private Location[][] locations;
     
     public Map() {
     }
 
-    public Map(int noOfRows, int noOfColumns) {
-        if(noOfRows < 1 || noOfColumns < 1){
-            System.out.println("you are dumb");
+    public Map(int numRows, int numCols) {
+        if(numRows < 1 || numCols < 1){
+            System.out.println("numRows and numCols have to be greater than 1");
             return;
         }
-        this.rowCount = noOfRows;
-        this.colCount = noOfColumns;
+        this.rowCount = numRows;
+        this.colCount = numCols;
+        this.locations = new Location[numRows][numCols];
         
-        this.locations =new Location[noOfRows][noOfColumns];
-        
-        for(int row =0; row < noOfRows; row++) {
-            for(int column =0; column < noOfColumns; column++){
-            
-            Location location =new Location();
+        for(int row =0; row < numRows; row++) {
+            for(int column =0; column < numCols; column++){
+            Location location = new Location();
             location.setColumn(column);
             location.setRow(row);
             locations[row][column] = location;
@@ -90,6 +79,15 @@ public class Map implements Serializable{
     public void setColCount(int colCount) {
         this.colCount = colCount;
     }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+    
     
     
     

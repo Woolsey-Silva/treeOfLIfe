@@ -1,21 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit260.TreeOfLife.model;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- *
- * @author Caleb
- */
 public class Player implements Serializable{
+    
+    private Character character;
     private String name;
     private double recordTime;
     private Game[] game;
+    
+     public Player() {
+    }
     
     @Override
     public int hashCode() {
@@ -48,9 +44,6 @@ public class Player implements Serializable{
         return "Player{" + "name=" + name + ", recordTime=" + recordTime + '}';
     }
 
-    public Player() {
-    }
-
     public String getName() {
         return name;
     }
@@ -75,6 +68,13 @@ public class Player implements Serializable{
         this.game = game;
     }
     
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
     
     
 }

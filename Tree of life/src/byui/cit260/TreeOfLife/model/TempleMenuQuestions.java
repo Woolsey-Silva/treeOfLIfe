@@ -14,18 +14,18 @@ import java.util.Objects;
  */
 public enum TempleMenuQuestions implements Serializable{
     
-    question1(","),
-    question2(","),
-    question3(",");
+    question1("NEEDS TO BE FIXED!", "NEEDS TO BE FIXED!"),
+    question2("NEEDS TO BE FIXED!", "NEEDS TO BE FIXED!"),
+    question3("NEEDS TO BE FIXED!", "NEEDS TO BE FIXED!"),
+    question4("NEEDS TO BE FIXED!", "NEEDS TO BE FIXED!"),
+    question5("NEEDS TO BE FIXED!", "NEEDS TO BE FIXED!");
     
     private final String question;
     private final String answer;
-    
-    private Location[] location;
 
-    TempleMenuQuestions(String question) {
+    TempleMenuQuestions(String question, String answer) {
         this.question = question;
-        this.answer = "test";
+        this.answer = answer;
     }
 
     public String getQuestion() {
@@ -35,16 +35,4 @@ public enum TempleMenuQuestions implements Serializable{
     public String getAnswer() {
         return answer;
     }
-
-    
-    
-    public Location[] getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location[] location) {
-        this.location = location;
-    }
-    
- 
 }

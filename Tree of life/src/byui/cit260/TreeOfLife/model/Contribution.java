@@ -19,6 +19,11 @@ public class Contribution implements Serializable{
 
     public Contribution() {
     }
+    
+    public Contribution(double amount, String category) {
+        this.amount = amount;
+        this.category = category;
+    }
 
     
     public double getAmount() {

@@ -13,15 +13,13 @@ import byui.cit260.TreeOfLife.model.Map;
  */
 public class MapControl {
 
-    private static Map createMap() {
+    public static Map createMap() {
        Map map = new Map(5,5);
-       
-       Scene[] scenes = createScenes();
-       
-       GameControl.assignScenesToLocation(map,scenes);
+       GameControl.assignScenesToLocation(map);
        return map;
     }
         public void move() {
-            System.out.println("move() function was called. NEEDS TO BE FINISHED!");
+            System.out.println("move() function was called. NEEDS TO BE "
+                    + "FINISHED!");
         }
 }

@@ -13,78 +13,27 @@ import java.util.Objects;
  * @author Caleb
  */
 public enum Character implements Serializable{
-    //fatih -
-    //obedience -
-    //knowledge -
-    //honesty -
-    //righteousness
-    //virtue -
-    Nephi("He is obedient and deterrmined to do what God has asked."),
-    Jacob("Nephi's Faithful brother, Prophet and successor to Nephi."),
-    Sam("He was the youngest of the lehis children, he sought after virture"),
-    Laman("He is the oldest of Lehi's family and valued his knowledge above all else."),
-    Zoram("He fled Jerusalem with Nephi and his brother and was honest to his word to follow Nephi"),
-    Lehi("He is a prophet of the Lord and called people to be Righteous Before he feld Jerusalem");
+    // Reference by Character.Nephi = Character[0]
+    Nephi("He is obedient and deterrmined to do what God has asked.", "Obediance"),
+    Jacob("Nephi's Faithful brother, Prophet and successor to Nephi.","NEEDS TO BE FIXED"),
+    Sam("He was the youngest of the lehis children, he sought after virture", "NEEDS TO BE FIXED"),
+    Laman("He is the oldest of Lehi's family and valued his knowledge above all else.", "NEEDS TO BE FIXED"),
+    Zoram("He fled Jerusalem with Nephi and his brother and was honest to his word to follow Nephi", "NEEDS TO BE FIXED"),
+    Lehi("He is a prophet of the Lord and called people to be Righteous Before he feld Jerusalem", "NEEDS TO BE FIXED");
     
     private final String description;
-    private final Point coordinates;
-    private  final int bonusAmount;
-    //private  final String bonusCategory;
-    
-    
-    private Game game;
-    private Location[] location;
-    private Armor armor;
-    
+    private  final Contribution bonusCategory;
 
-
-    Character(String description) {
-    this.description = description;
-    coordinates = new Point(3,3);
-    bonusAmount = 3;
-    //bonusCategory = new Category;
+    Character(String description, String category) {
+        this.description = description;
+        bonusCategory = new Contribution(3, category);
     }
   
     public String getDescription() {
         return description;
     }
 
-    
-    public Point getcoordinates() {
-        return coordinates;
-    }
-
-    public int getBonusAmount() {
-        return bonusAmount;
-    }
-
-    /*public String getBonusCategory() {
+    public Contribution getBonusCategory() {
         return bonusCategory;
-    }*/
-
-    public Game getGame() {
-        return game;
-    }
-
-    public void setGame(Game game) {
-        this.game = game;
-    }
-
-    public Location[] getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location[] location) {
-        this.location = location;
-    }
-
-    public Armor getArmor() {
-        return armor;
-    }
-
-    public void setArmor(Armor armor) {
-        this.armor = armor;
     } 
-    
-    
 }
