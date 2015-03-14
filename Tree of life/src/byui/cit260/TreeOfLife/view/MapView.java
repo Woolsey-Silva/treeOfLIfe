@@ -34,8 +34,7 @@ public class MapView extends View{
     }
     
     @Override
-    public boolean doAction(Object obj) {
-        String choice = (String)obj;
+    public void doAction(String choice) {
         switch (choice){
             case "M":
                 MapControl mapControl = new MapControl();
@@ -45,11 +44,10 @@ public class MapView extends View{
                 forgeArmor forgeArmor = new forgeArmor();
                 break;
             case "E":
-                return true;
+                return;
             default:
                 System.out.println("\nINVALID SELECTION! Try again!");
                 break;
         }
-        return false;
     }
 }

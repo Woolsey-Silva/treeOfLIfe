@@ -31,10 +31,7 @@ public class askQuestionView extends View {
     
       
     @Override
-    public boolean doAction(Object obj) {
-        
-        String choice = (String)obj;
-        
+    public void doAction(String choice) {
             switch (choice){
             case "7":
                 System.out.println("\n Great Job! That is the right answer.");
@@ -43,13 +40,11 @@ public class askQuestionView extends View {
                 skipQuestion();
                 break;
             case "E":
-                return true;
+                return;
             default:
                 System.out.println("\nThat isnt the answer I was Looking for.");
                 break;
             }
-            
-            return false;
         }
 
     void skipQuestion() {

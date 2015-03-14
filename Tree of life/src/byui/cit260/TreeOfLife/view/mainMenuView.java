@@ -22,10 +22,7 @@ public class mainMenuView extends View {
     
     
     @Override
-    public boolean doAction(Object obj) {
-        
-        String value = (String)obj;
-        
+    public void doAction(String value) {
         value = value.toUpperCase();
         char choice = value.charAt(0);
         
@@ -43,12 +40,11 @@ public class mainMenuView extends View {
                 this.saveGame();
                 break;
             case 'E':
-                return true;
+                return;
             default:
                 System.out.println("\n**** invalid selection ***** try again");
                 break;
         }
-        return false;
     }  
 
     private void saveGame() {

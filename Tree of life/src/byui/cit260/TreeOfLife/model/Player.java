@@ -12,7 +12,7 @@ public class Player implements Serializable{
     
      public Player() {
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 7;

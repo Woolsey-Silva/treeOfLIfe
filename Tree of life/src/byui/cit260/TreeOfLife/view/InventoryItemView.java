@@ -33,8 +33,7 @@ public class InventoryItemView extends View {
     }
     
     @Override
-    public boolean doAction(Object obj) {
-        String choice = (String)obj;
+    public void doAction(String choice) {
         switch (choice){
             case "1":
                 System.out.println("This will describe item number 1");
@@ -55,11 +54,10 @@ public class InventoryItemView extends View {
                 System.out.println("This will describe item number 6");
                 break;
             case "E":
-                return true;
+                return;
             default:
                 System.out.println("\nINVALID SELECTION! Try again!");
                 break;
         }
-        return false;
     }   
 }

@@ -28,8 +28,7 @@ public class HelpMenuView extends View {
     
    
     @Override
-    public boolean doAction(Object obj) {
-        String choice = (String)obj;
+    public void doAction(String choice) {
         switch (choice){
             case "G":
                 this.goalHelp();
@@ -44,12 +43,11 @@ public class HelpMenuView extends View {
                 this.templeHelp();
                 break;
             case "E":
-                return true;
+                return;
             default:
                 System.out.println("\nINVALID SELECTION! Try again!");
                 break;
         }
-        return false;
     }
 
     private void goalHelp() {

@@ -1,5 +1,6 @@
 package byui.cit260.TreeOfLife.view;
 
+import byui.cit260.TreeOfLife.model.Item;
 import byui.cit260.TreeOfLife.model.Map;
 import java.util.Scanner;
 
@@ -10,6 +11,7 @@ public class GameMenuView extends View {
             +"\n| Game Menu                                  |"
             +"\n|--------------------------------------------|"
             +"\n|H - Get help on how to play the game        |"
+            +"\n|V - View Inventory                          |"
             +"\n|M - Show Map (Begin Game)                   |"
             +"\n|S - Save Game                               |"
             +"\n|E - Exit Game                               |"
@@ -17,11 +19,13 @@ public class GameMenuView extends View {
     }
     
     @Override
-    public boolean doAction(Object obj) {
-        String choice = (String)obj;
+    public void doAction(String choice) {
         switch (choice){
             case "H":
                 this.displayHelpMenu();
+                break;
+            case "V":
+                this.viewInventory();
                 break;
             case "M":
                 this.showMap();
@@ -30,24 +34,30 @@ public class GameMenuView extends View {
                 this.saveGame();
                 break;
             case "E":
-                return true;
+                return;
             default:
                 System.out.println("\nINVALID SELECTION! Try again!");
                 break;
         }
-        return false;
     }
 
     private void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
+    
+    private void viewInventory() {
+        System.out.println("\nList of Inventory Items");
+        System.out.println("Description" + "\t" + "Name");
+        
+        // for loop for the size of the Item enum
+        
+        for (Item item : Item.values()) {
+            System.out.println(item);
+        }
+    }
 
     private void showMap() {
-        Map map = new Map();
-        map.setColCount(3);
-        map.setRowCount(3);
-        
         MapView mapView = new MapView();
         mapView.display();
     }

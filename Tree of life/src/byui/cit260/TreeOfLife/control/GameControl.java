@@ -8,6 +8,7 @@ import byui.cit260.TreeOfLife.model.Location;
 import byui.cit260.TreeOfLife.model.Map;
 import byui.cit260.TreeOfLife.model.Player;
 import byui.cit260.TreeOfLife.model.Scene;
+import byui.cit260.TreeOfLife.view.CharacterSelectView;
 import java.util.ArrayList;
 import tree.of.life.TreeOfLife;
 
@@ -20,6 +21,9 @@ public class GameControl {
     public static void createNewGame(Player player) {
         Game game = new Game();
         TreeOfLife.setCurrentGame(game);
+        
+        CharacterSelectView charView = new CharacterSelectView();
+        charView.display();
         
         player.setCharacter(character);
         game.setPlayer(player);
