@@ -7,60 +7,80 @@ package byui.cit260.TreeOfLife.view;
 
 import byui.cit260.TreeOfLife.control.MapControl;
 import byui.cit260.TreeOfLife.control.forgeArmor;
+import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Location;
 import byui.cit260.TreeOfLife.model.Map;
+import tree.of.life.TreeOfLife;
 public class MapView extends View{
-    
 
-public void displayMap(rowCount, colCount) {
- //get the map locations from the current game
-Location = Location[][] getLocations();
-
-         
- //DISPLAY title
- 
- super("\n"
+    public MapView() {
+        super("\n"
             +"\n----------------------------------------------"
             +"\n|                 Map View                   |"
             +"\n|--------------------------------------------|");
-         
- //DISPLAY row of column numbers
-        
- //FOR every row in map
-    for(int r=1; Map.rowCount > r; r++){
-        //DISPLAY row divider
-        System.out.println("--------------------------------------------");
-        //DISPLAY row number
-        System.out.println(r + " [] ");
+    }
     
-        //FOR every column in row
-        for(int m=1; Map.colCount > m; m++) {
-            //DISPLAY column divider 
-            System.out.println("|");
-            //location = location[row][column]
-            locations[row][column] = location;
-            //IF location has been visited
-            if() {
-            //DISPLAY the map symbol for location
+    @Override
+    public void doAction(String choice) {
+    }
+    
+    public void displayMap(int rowCount, int colCount) {
+        //get the map locations from the current game   
+        Game game = TreeOfLife.getGame();
+        Map map = game.getMap();
+        Location[][] locations = map.getLocations();
         
-            //ELSE
+        //DISPLAY row of column numbers
+        
+        
+        //FOR every row in map
+        int rowNum = map.getRowCount();
+        int colNum = map.getColCount();
+        
+        System.out.println("   Col      1   2   3   4   5               ");
+        
+        for(int i = 0; rowNum > i; i++){
+            
+            // If it is the last row in the map
+            if(i == (rowNum - 1)){
+                System.out.println("   Row   " + (i + 1));
+            }
+            
+            // Otherwise
             else {
-            //DISPLAY " ?? "
+                System.out.println("         " + (i + 1));
             }
-            //ENDIF
+            
+            for(int j = 0; colNum > j; j++) {
+            
+                //DISPLAY column divider 
+                System.out.println(" ");
+            
+                //location = location[row][column]
+                Location location = locations[i][j];
+                boolean isVisited = location.isVisited();
+                
+                //IF location has been visited
+                if(isVisited) {
+                    //DISPLAY the map symbol for visited location
+                    System.out.println("[*]");
+                }
+        
+                //ELSE
+                else {
+                    //DISPLAY the map symbol for default location
+                    System.out.println("[ ]");
+                }
             }
-        
-        //DISPLAY ending column divider
-        
-        //ENDFOR
         }
-        
-    //DISPLAY ending row divider
-    }   
-//END
-    
+        // Display ending row divider
+        System.out.println("--------------------------------------------");
+    }        
 }
 
+
+ //DISPLAY row divider
+            //System.out.println("--------------------------------------------");
 
 
 /*public class MapView extends View{
@@ -69,12 +89,12 @@ Location = Location[][] getLocations();
             +"\n----------------------------------------------"
             +"\n|                 Map View                   |"
             +"\n|--------------------------------------------|"
-            +"\n|  Row -| 5 [ ] [ ] [ ] [ ] [ ]              |"
-            +"\n|       V 4 [ ] [ ] [ ] [ ] [ ]              |"
-            +"\n|         3 [ ] [ ] [X] [ ] [ ]              |"
-            +"\n|         2 [ ] [ ] [ ] [ ] [ ]              |"
-            +"\n|         1 [ ] [ ] [ ] [ ] [ ]              |"
-            +"\n|   Col-->   1   2   3   4   5               |"  
+            +"\n   Col      1   2   3   4   5                 "
+            +"\n         1 [ ] [ ] [ ] [ ] [ ]                "
+            +"\n         2 [ ] [ ] [ ] [ ] [ ]                "
+            +"\n         3 [ ] [ ] [X] [ ] [ ]                "
+            +"\n         4 [ ] [ ] [ ] [ ] [ ]                "
+            +"\n   Row   5 [ ] [ ] [ ] [ ] [ ]                "  
             +"\n----------------------------------------------"
             +"\n| What would you like to do?                 |"
             +"\n----------------------------------------------"

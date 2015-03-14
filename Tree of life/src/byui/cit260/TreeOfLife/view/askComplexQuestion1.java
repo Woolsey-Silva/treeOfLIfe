@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class askComplexQuestion1 {
     public void run() {
-        TempleMenuQuestions complexQuestion1 = new TempleMenuQuestions();
+    /*    TempleMenuQuestions complexQuestion1 = new TempleMenuQuestions();
         complexQuestion1.setAnswer(7.07);
         double correctAnswer = complexQuestion1.getAnswer();
         complexQuestion1.setQuestion("\n\nNephi is building his ship to travel"
@@ -70,5 +70,7 @@ public class askComplexQuestion1 {
         Scanner input = new Scanner(System.in);
         int width = input.nextInt();
         return width;
+    }
+            */
     }
 }

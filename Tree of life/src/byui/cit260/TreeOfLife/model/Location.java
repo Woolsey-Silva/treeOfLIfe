@@ -9,6 +9,7 @@ public class Location implements Serializable{
     private Scene scene;
     private Item itemInLocation;
     private Question questionInLocation;
+    private boolean visited;
 
     public Scene getScene() {
         return scene;
@@ -57,6 +58,16 @@ public class Location implements Serializable{
     public void setColumn(double column) {
         this.column = column;
     }
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+    
+    
 
     @Override
     public String toString() {

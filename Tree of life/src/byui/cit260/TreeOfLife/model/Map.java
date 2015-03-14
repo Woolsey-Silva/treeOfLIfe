@@ -20,8 +20,8 @@ public class Map implements Serializable{
         this.colCount = numCols;
         this.locations = new Location[numRows][numCols];
         
-        for(int row =0; row < numRows; row++) {
-            for(int column =0; column < numCols; column++){
+        for(int row = 0; row < numRows; row++) {
+            for(int column = 0; column < numCols; column++){
             Location location = new Location();
             location.setColumn(column);
             location.setRow(row);

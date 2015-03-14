@@ -25,7 +25,7 @@ public class GameControl {
         CharacterSelectView charView = new CharacterSelectView();
         charView.display();
         
-        player.setCharacter(character);
+        // player.setCharacter(character);
         game.setPlayer(player);
         TreeOfLife.setPlayer(player);
         

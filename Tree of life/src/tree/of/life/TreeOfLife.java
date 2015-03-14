@@ -26,7 +26,7 @@ public class TreeOfLife {
         
     }
 
-    public static Game getCurrentGame() {
+    public static Game getGame() {
         return currentGame;
     }
 
