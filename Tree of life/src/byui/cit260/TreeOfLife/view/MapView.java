@@ -7,12 +7,63 @@ package byui.cit260.TreeOfLife.view;
 
 import byui.cit260.TreeOfLife.control.MapControl;
 import byui.cit260.TreeOfLife.control.forgeArmor;
-
-/**
- *
- * @author Caleb
- */
+import byui.cit260.TreeOfLife.model.Location;
+import byui.cit260.TreeOfLife.model.Map;
 public class MapView extends View{
+    
+
+public void displayMap(rowCount, colCount) {
+ //get the map locations from the current game
+Location = Location[][] getLocations();
+
+         
+ //DISPLAY title
+ 
+ super("\n"
+            +"\n----------------------------------------------"
+            +"\n|                 Map View                   |"
+            +"\n|--------------------------------------------|");
+         
+ //DISPLAY row of column numbers
+        
+ //FOR every row in map
+    for(int r=1; Map.rowCount > r; r++){
+        //DISPLAY row divider
+        System.out.println("--------------------------------------------");
+        //DISPLAY row number
+        System.out.println(r + " [] ");
+    
+        //FOR every column in row
+        for(int m=1; Map.colCount > m; m++) {
+            //DISPLAY column divider 
+            System.out.println("|");
+            //location = location[row][column]
+            locations[row][column] = location;
+            //IF location has been visited
+            if() {
+            //DISPLAY the map symbol for location
+        
+            //ELSE
+            else {
+            //DISPLAY " ?? "
+            }
+            //ENDIF
+            }
+        
+        //DISPLAY ending column divider
+        
+        //ENDFOR
+        }
+        
+    //DISPLAY ending row divider
+    }   
+//END
+    
+}
+
+
+
+/*public class MapView extends View{
     public MapView() {
         super("\n"
             +"\n----------------------------------------------"
@@ -50,4 +101,4 @@ public class MapView extends View{
                 break;
         }
     }
-}
+}*/
