@@ -9,6 +9,8 @@ public class Player implements Serializable{
     private String name;
     private double recordTime;
     private Game[] game;
+    private int colCount;
+    private int rowCount;
     
      public Player() {
     }
@@ -75,6 +77,24 @@ public class Player implements Serializable{
     public void setCharacter(Character character) {
         this.character = character;
     }
+
+    public int getColCount() {
+        return colCount;
+    }
+
+    public void setColCount(int colCount) {
+        this.colCount = colCount;
+    }
+
+    public int getRowCount() {
+        return rowCount;
+    }
+
+    public void setRowCount(int rowCount) {
+        this.rowCount = rowCount;
+    }
+    
+    
     
     
 }

@@ -1,5 +1,6 @@
 package byui.cit260.TreeOfLife.view;
 
+import byui.cit260.TreeOfLife.control.InventoryControl;
 import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Item;
 import byui.cit260.TreeOfLife.model.Map;
@@ -19,6 +20,8 @@ public class GameMenuView extends View {
             +"\n|M - Show Map (Begin Game)                   |"
             +"\n|S - Save Game                               |"
             +"\n|E - Exit Game                               |"
+            +"\n|T - TestingOnly Add item to inventory       |"
+            +"\n|Z - TestingOnly Search for item in inventory|"
             +"\n----------------------------------------------");
     }
     
@@ -42,6 +45,12 @@ public class GameMenuView extends View {
                 break;
             case "E":
                 return;
+            case "T":
+                this.addItem();
+                break;
+            case "Z":
+                this.searchItem();
+                break;
             default:
                 System.out.println("\nINVALID SELECTION! Try again!");
                 break;
@@ -110,5 +119,16 @@ public class GameMenuView extends View {
 
     private void saveGame() {
         System.out.println("saveGame function was called");
+    }
+
+    private void addItem() {
+        InventoryControl inventoryControl = new InventoryControl();
+        inventoryControl.addItem(Item.IngotOfFaith);
+    }
+
+    private void searchItem() {
+        InventoryControl inventoryControl = new InventoryControl();
+        inventoryControl.searchItem(Item.IngotOfRighteousness);
+        inventoryControl.searchItem(Item.IngotOfFaith);
     }
 }
