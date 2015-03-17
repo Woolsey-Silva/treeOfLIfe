@@ -156,11 +156,5 @@ public class Game implements Serializable{
 
     public Armor[] getArmor() {
         return armor;
-    }
-
-    public void setArmor(Armor[] armor) {
-        this.armor = armor;
-    }
-    
-    
+    } 
 }

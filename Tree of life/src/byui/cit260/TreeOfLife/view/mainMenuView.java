@@ -77,7 +77,12 @@ public class mainMenuView extends View {
             + "\nthe pitfall along the way. Remember: DON'T LET GO OF THE ROD!'"
             + "\nYou look in your hand and see a book entitled 'The Book of"
             + "\nMormon'.");
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.display();
+        String choice = "";
+        while (!(choice.equals("E"))){
+            GameMenuView gameMenu = new GameMenuView();
+            gameMenu.display();
+            choice = gameMenu.getInput();
+            gameMenu.doAction(choice);
+        }
     }
 }

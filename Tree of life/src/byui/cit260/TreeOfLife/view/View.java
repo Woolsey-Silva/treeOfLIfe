@@ -19,12 +19,7 @@ public abstract class View implements ViewInterface {
     
     @Override
     public void display() {
-        String value;
-        do {
             System.out.println(this.promptMessage);
-            value = this.getInput();
-            this.doAction(value);
-        } while (!value.equals("E"));
     }
     
     @Override
@@ -43,7 +38,6 @@ public abstract class View implements ViewInterface {
                 System.out.println("\n*** Invalid selection! Please try again! ***");
                 continue;
             }
-            
             break;
         }
         return selection;

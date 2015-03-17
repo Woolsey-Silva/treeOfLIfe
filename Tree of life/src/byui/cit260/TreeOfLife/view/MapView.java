@@ -17,14 +17,14 @@ public class MapView extends View{
         super("\n"
             +"\n----------------------------------------------"
             +"\n|                 Map View                   |"
-            +"\n|--------------------------------------------|");
+            +"\n----------------------------------------------");
     }
     
     @Override
     public void doAction(String choice) {
     }
     
-    public void displayMap(int rowCount, int colCount) {
+    public void displayMap() {
         //get the map locations from the current game   
         Game game = TreeOfLife.getGame();
         Map map = game.getMap();
@@ -43,18 +43,18 @@ public class MapView extends View{
             
             // If it is the last row in the map
             if(i == (rowNum - 1)){
-                System.out.println("   Row   " + (i + 1));
+                System.out.printf("   Row   " + (i + 1));
             }
             
             // Otherwise
             else {
-                System.out.println("         " + (i + 1));
+                System.out.printf("         " + (i + 1));
             }
             
             for(int j = 0; colNum > j; j++) {
             
                 //DISPLAY column divider 
-                System.out.println(" ");
+                System.out.printf(" ");
             
                 //location = location[row][column]
                 Location location = locations[i][j];
@@ -62,14 +62,24 @@ public class MapView extends View{
                 
                 //IF location has been visited
                 if(isVisited) {
+                    if (j == 4){
+                        System.out.println("[*]");
+                    }
+                    else {
                     //DISPLAY the map symbol for visited location
-                    System.out.println("[*]");
+                    System.out.printf("[*]");
+                    }
                 }
         
                 //ELSE
                 else {
+                    if (j == 4) {
+                        System.out.println("[ ]");
+                    }
+                    else {
                     //DISPLAY the map symbol for default location
-                    System.out.println("[ ]");
+                    System.out.printf("[ ]");
+                    }
                 }
             }
         }
@@ -77,48 +87,3 @@ public class MapView extends View{
         System.out.println("--------------------------------------------");
     }        
 }
-
-
- //DISPLAY row divider
-            //System.out.println("--------------------------------------------");
-
-
-/*public class MapView extends View{
-    public MapView() {
-        super("\n"
-            +"\n----------------------------------------------"
-            +"\n|                 Map View                   |"
-            +"\n|--------------------------------------------|"
-            +"\n   Col      1   2   3   4   5                 "
-            +"\n         1 [ ] [ ] [ ] [ ] [ ]                "
-            +"\n         2 [ ] [ ] [ ] [ ] [ ]                "
-            +"\n         3 [ ] [ ] [X] [ ] [ ]                "
-            +"\n         4 [ ] [ ] [ ] [ ] [ ]                "
-            +"\n   Row   5 [ ] [ ] [ ] [ ] [ ]                "  
-            +"\n----------------------------------------------"
-            +"\n| What would you like to do?                 |"
-            +"\n----------------------------------------------"
-            +"\n|M - Move to new location                    |"
-            +"\n|F - Set up the forge                        |"
-            +"\n|E - Exit the Map View                        |"
-            +"\n----------------------------------------------");
-    }
-    
-    @Override
-    public void doAction(String choice) {
-        switch (choice){
-            case "M":
-                MapControl mapControl = new MapControl();
-                mapControl.move();
-                break;
-            case "F":
-                forgeArmor forgeArmor = new forgeArmor();
-                break;
-            case "E":
-                return;
-            default:
-                System.out.println("\nINVALID SELECTION! Try again!");
-                break;
-        }
-    }
-}*/

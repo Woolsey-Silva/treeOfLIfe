@@ -25,6 +25,8 @@ public class startProgramView {
         //Display main menu
         mainMenuView mainMenu = new mainMenuView();
         mainMenu.display();
+        String choice = mainMenu.getInput();
+        mainMenu.doAction(choice);
     }
 
     public void displayBanner() {

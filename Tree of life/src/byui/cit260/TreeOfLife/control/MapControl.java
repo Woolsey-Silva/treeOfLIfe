@@ -5,6 +5,7 @@
  */
 package byui.cit260.TreeOfLife.control;
 
+import byui.cit260.TreeOfLife.model.Location;
 import byui.cit260.TreeOfLife.model.Map;
 
 /**
@@ -16,6 +17,8 @@ public class MapControl {
     public static Map createMap() {
        Map map = new Map(5,5);
        GameControl.assignScenesToLocation(map);
+       GameControl.assignQuestionsToLocation(map);
+       GameControl.assignItemsToLocation(map);
        return map;
     }
         public void move() {
