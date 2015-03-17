@@ -1,6 +1,7 @@
 package byui.cit260.TreeOfLife.view;
 
 import byui.cit260.TreeOfLife.control.InventoryControl;
+import byui.cit260.TreeOfLife.control.forgeArmor;
 import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Item;
 import byui.cit260.TreeOfLife.model.Map;
@@ -22,6 +23,7 @@ public class GameMenuView extends View {
             +"\n|E - Exit Game                               |"
             +"\n|T - TestingOnly Add item to inventory       |"
             +"\n|Z - TestingOnly Search for item in inventory|"
+            +"\n|Y - TestingOnly ForgeItem                   |"
             +"\n----------------------------------------------");
     }
     
@@ -50,6 +52,9 @@ public class GameMenuView extends View {
                 break;
             case "Z":
                 this.searchItem();
+                break;
+            case "Y":
+                this.forgeItem();
                 break;
             default:
                 System.out.println("\nINVALID SELECTION! Try again!");
@@ -130,5 +135,10 @@ public class GameMenuView extends View {
         InventoryControl inventoryControl = new InventoryControl();
         inventoryControl.searchItem(Item.IngotOfRighteousness);
         inventoryControl.searchItem(Item.IngotOfFaith);
+    }
+
+    private void forgeItem() {
+        forgeArmor forgeArmor = new forgeArmor();
+        forgeArmor.setUp();
     }
 }

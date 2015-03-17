@@ -13,8 +13,6 @@ public class InventoryControl {
         boolean haveRoom = this.backpackRoom(backpack);
         if (haveRoom) {
             backpack.add(item);
-            System.out.println("The item " + item + "was added to your"
-                    + "\ninventory.");
         }
         else {
             System.out.println("SORRY! The item was no added to your backpack"

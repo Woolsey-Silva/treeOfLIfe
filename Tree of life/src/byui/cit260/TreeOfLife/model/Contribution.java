@@ -12,20 +12,19 @@ import java.util.Objects;
  *
  * @author ENTELLiJENSE
  */
-public class Contribution implements Serializable{
-   
+public class Contribution implements Serializable {
+
     private double amount;
     private String category;
 
     public Contribution() {
     }
-    
+
     public Contribution(double amount, String category) {
         this.amount = amount;
         this.category = category;
     }
 
-    
     public double getAmount() {
         return amount;
     }
@@ -73,8 +72,4 @@ public class Contribution implements Serializable{
         return true;
     }
 
-    
-    
 }
-
-

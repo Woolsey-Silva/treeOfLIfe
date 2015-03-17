@@ -131,8 +131,22 @@ public class GameControl {
         locations[4][4].setItemInLocation(Item.IngotOfFaith);
     }
 
-
-
     
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
