@@ -100,15 +100,15 @@ public class TempleMenuControl {
           
           int testAnswer = (width * length);
           
-          if (testAnswer == correctAnswer)
+          if (testAnswer == correctAnswer) 
               throw new TempleMenuControlException("The answer was correct");
           {
-              //return 0;
+              return 0;
           }
           if(!(testAnswer == correctAnswer))
               throw new TempleMenuControlException("The answer was incorrect");
           {
-              //return 1;
+              return 1;
           }
     }
 }

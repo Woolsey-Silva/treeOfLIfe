@@ -5,6 +5,7 @@
  */
 package byui.cit260.TreeOfLife.control;
 
+import byui.cit260.TreeOfLife.exceptions.MapControlException;
 import byui.cit260.TreeOfLife.model.Location;
 import byui.cit260.TreeOfLife.model.Map;
 
@@ -21,7 +22,12 @@ public class MapControl {
        GameControl.assignItemsToLocation(map);
        return map;
     }
-        public void move() {
+        public void move(int rowNum, int colNum) throws MapControlException {
+            if (rowNum < 1 || rowNum > 5 || colNum < 1 || colNum > 5) {
+                throw new MapControlException("The input location on the map"
+                        + "\nis not valid! Please re-enter location and try "
+                        + "\nagain!");
+            }
             System.out.println("move() function was called. NEEDS TO BE "
                     + "FINISHED!");
         }
