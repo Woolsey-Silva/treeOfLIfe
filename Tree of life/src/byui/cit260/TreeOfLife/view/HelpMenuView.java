@@ -45,13 +45,13 @@ public class HelpMenuView extends View {
             case "E":
                 return;
             default:
-                System.out.println("\nINVALID SELECTION! Try again!");
+                ErrorView.display(this.getClass().getName(), "\nINVALID SELECTION! Try again!");
                 break;
         }
     }
 
     private void goalHelp() {
-        System.out.println("\n\nThe goal of the game is to answer the questions"
+        this.console.println("\n\nThe goal of the game is to answer the questions"
                 + "\ncorrectly. When you answer a question correctly,"
                 + "\nyou will get a small item. This item will have"
                 + "\ncertain attributes. You can then combine small items"
@@ -62,7 +62,7 @@ public class HelpMenuView extends View {
     }
 
     private void moveHelp() {
-        System.out.println("\n\nAt the end of each question answered, it will"
+        this.console.println("\n\nAt the end of each question answered, it will"
                 + "\ndisplay whether or not you got the answer correct. If you"
                 + "\nget the answer correct, you will get a small item. After"
                 + "\nthe scenario is finished you will get the option to move."
@@ -71,7 +71,7 @@ public class HelpMenuView extends View {
     }
 
     private void forgeHelp() {
-        System.out.println("\n\nObtaining small items from each correctly answered"
+        this.console.println("\n\nObtaining small items from each correctly answered"
                 + "\nquestion will give you the opportunity to progress and make"
                 + "\npeices of armor. You can smelt these small items down into"
                 + "\ningots of an attribute. When you have 10 ingots of a given"
@@ -81,7 +81,7 @@ public class HelpMenuView extends View {
     }
 
     private void templeHelp() {
-        System.out.println("\n\nAlong the way, you will have the opportunity to go"
+        this.console.println("\n\nAlong the way, you will have the opportunity to go"
                 + "\nto the temple. The temple has bonus questions that are either"
                 + "\nmoral in nature or could be mathematically complex. If you"
                 + "\nanswer a temple question correctly, the rewards will be"

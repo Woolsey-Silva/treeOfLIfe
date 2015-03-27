@@ -34,7 +34,7 @@ public class askQuestionView extends View {
     public void doAction(String choice) {
             switch (choice){
             case "7":
-                System.out.println("\n Great Job! That is the right answer.");
+                this.console.println("\n Great Job! That is the right answer.");
                 break;    
             case "S":
                 skipQuestion();
@@ -42,13 +42,13 @@ public class askQuestionView extends View {
             case "E":
                 return;
             default:
-                System.out.println("\nThat isnt the answer I was Looking for.");
+                this.console.println("\nThat isnt the answer I was Looking for.");
                 break;
             }
         }
 
     void skipQuestion() {
-        System.out.println("function was called Skip question");
+        this.console.println("function was called Skip question");
     }
 
 }

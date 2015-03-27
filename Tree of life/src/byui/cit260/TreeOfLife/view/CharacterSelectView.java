@@ -42,7 +42,7 @@ public class CharacterSelectView extends View {
             case "D":
                 break;
             default:
-                System.out.println("\nINVALID SELECTION! Try again!");
+                ErrorView.display(this.getClass().getName(), "\nINVALID SELECTION! Try again!");
                 break;
         }
     }

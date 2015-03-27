@@ -11,6 +11,7 @@ import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Location;
 import byui.cit260.TreeOfLife.model.Map;
 import tree.of.life.TreeOfLife;
+
 public class MapView extends View{
 
     public MapView() {
@@ -37,24 +38,24 @@ public class MapView extends View{
         int rowNum = map.getRowCount();
         int colNum = map.getColCount();
         
-        System.out.println("   Col      1   2   3   4   5               ");
+        this.console.println("   Col      1   2   3   4   5               ");
         
         for(int i = 0; rowNum > i; i++){
             
             // If it is the last row in the map
             if(i == (rowNum - 1)){
-                System.out.printf("   Row   " + (i + 1));
+                this.console.printf("   Row   " + (i + 1));
             }
             
             // Otherwise
             else {
-                System.out.printf("         " + (i + 1));
+                this.console.printf("         " + (i + 1));
             }
             
             for(int j = 0; colNum > j; j++) {
             
                 //DISPLAY column divider 
-                System.out.printf(" ");
+                this.console.printf(" ");
             
                 //location = location[row][column]
                 Location location = locations[i][j];
@@ -63,28 +64,28 @@ public class MapView extends View{
                 //IF location has been visited
                 if(isVisited) {
                     if (j == 4){
-                        System.out.println("[*]");
+                        this.console.println("[*]");
                     }
                     else {
                     //DISPLAY the map symbol for visited location
-                    System.out.printf("[*]");
+                    this.console.printf("[*]");
                     }
                 }
         
                 //ELSE
                 else {
                     if (j == 4) {
-                        System.out.println("[ ]");
+                        this.console.println("[ ]");
                     }
                     else {
                     //DISPLAY the map symbol for default location
-                    System.out.printf("[ ]");
+                    this.console.printf("[ ]");
                     }
                 }
             }
         }
         // Display ending row divider
-        System.out.println("--------------------------------------------");
+        this.console.println("--------------------------------------------");
     }        
 }
 

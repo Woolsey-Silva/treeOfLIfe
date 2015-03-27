@@ -1,10 +1,13 @@
 package byui.cit260.TreeOfLife.view;
 
+import byui.cit260.TreeOfLife.control.GameControl;
 import byui.cit260.TreeOfLife.control.InventoryControl;
 import byui.cit260.TreeOfLife.control.forgeArmor;
 import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Item;
 import byui.cit260.TreeOfLife.model.Map;
+import byui.cit260.TreeOfLife.model.Player;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 import tree.of.life.TreeOfLife;
@@ -24,6 +27,8 @@ public class GameMenuView extends View {
             +"\n|T - TestingOnly Add item to inventory       |"
             +"\n|Z - TestingOnly Search for item in inventory|"
             +"\n|Y - TestingOnly ForgeItem                   |"
+            +"\n|L - Print Location to file                  |"
+            +"\n|C - Print Character to file                 |"
             +"\n----------------------------------------------");
     }
     
@@ -56,8 +61,14 @@ public class GameMenuView extends View {
             case "Y":
                 this.forgeItem();
                 break;
+            case "C":
+                this.printChar();
+                break;
+            case "L":
+                this.printLoc();
+                break;
             default:
-                System.out.println("\nINVALID SELECTION! Try again!");
+                ErrorView.display(this.getClass().getName(), "\nINVALID SELECTION! Try again!");
                 break;
         }
     }
@@ -84,10 +95,10 @@ public class GameMenuView extends View {
             inventoryItemView.display();
             
             for (Item i : inventory) {
-                System.out.printf(i.getItemDescription());
-                System.out.println("\t\t\t" + i.getName());
+                this.console.printf(i.getItemDescription());
+                this.console.println("\t\t\t" + i.getName());
             }
-            System.out.println("Press 'E' to exit");
+            this.console.println("Press 'E' to exit");
             
             choice = inventoryItemView.getInput();
             inventoryItemView.doAction(choice);
@@ -101,14 +112,14 @@ public class GameMenuView extends View {
             Game game = TreeOfLife.getGame();
             
             gameItemList.display();
-            System.out.println("\nList of Inventory Items");
-            System.out.println("Description\t\tName");
+            this.console.println("\nList of Inventory Items");
+            this.console.println("Description\t\tName");
       
             // for loop for the size of the Item enum
             for (Item item :Item.values()) {
-                System.out.println(item);
+                this.console.println(item);
             }
-            System.out.println("Press 'E' to exit");
+            this.console.println("Press 'E' to exit");
             choice = gameItemList.getInput();
             gameItemList.doAction(choice);
         }
@@ -123,7 +134,17 @@ public class GameMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("saveGame function was called");
+        //Prompt for and get the name of the file to save the game in
+        this.console.println("\n\nEnter the filepath for file where the game"
+                + "is to be saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.saveGame(TreeOfLife.getGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
     private void addItem() {
@@ -140,5 +161,54 @@ public class GameMenuView extends View {
     private void forgeItem() {
         forgeArmor forgeArmor = new forgeArmor();
         forgeArmor.setUp();
+    }
+    
+    private void printLoc() {
+        try {
+            // open loc file
+            String filePath = "C:/Users/Caleb/Desktop/location.txt";
+            PrintWriter locFile = TreeOfLife.getLocFile();
+            locFile = new PrintWriter(filePath);
+            
+            // print location of player to the file.
+            Player player = TreeOfLife.getPlayer();
+            int colCount = player.getColCount();
+            int rowCount = player.getRowCount();
+            locFile.println("Row Count of Player: " + rowCount);
+            locFile.println("Column Count of Player: " + colCount);
+            
+            // save the loc file
+            TreeOfLife.setLocFile(locFile);
+            return;
+        } catch (Throwable e) {
+            ErrorView.display(this.getClass().getName(), ("Exception: " + e.toString() +
+                               "\nCause: " + e.getCause() +
+                               "\nMessage: " + e.getMessage()));
+            e.printStackTrace();;
+        }
+    }
+
+    private void printChar() {
+        try {
+            // open charFile
+            String filePath = "C:/Users/Caleb/Desktop/character.txt";
+            PrintWriter charFile = TreeOfLife.getCharFile();
+            charFile = new PrintWriter(filePath);
+            
+            // print the character to the file
+            Player player = TreeOfLife.getPlayer();
+            byui.cit260.TreeOfLife.model.Character character = player.getCharacter();
+            charFile.println("Character: " + character);
+            
+            // Reset the charFile
+            TreeOfLife.setCharFile(charFile);
+            
+            return;
+        } catch (Throwable e) {
+            ErrorView.display(this.getClass().getName(), ("Exception: " + e.toString() +
+                               "\nCause: " + e.getCause() +
+                               "\nMessage: " + e.getMessage()));
+            e.printStackTrace();;
+        }
     }
 }

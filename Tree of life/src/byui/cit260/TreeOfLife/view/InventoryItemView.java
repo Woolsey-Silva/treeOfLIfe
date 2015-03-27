@@ -26,7 +26,7 @@ public class InventoryItemView extends View {
             case "E":
                 return;
             default:
-                System.out.println("\nINVALID SELECTION! Try again!");
+                ErrorView.display(this.getClass().getName(), "\nINVALID SELECTION! Try again!");
                 break;
         }
     }   

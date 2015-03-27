@@ -85,7 +85,7 @@ public class TempleMenuControl {
           
     }
 
-    public int askComplexQuestion3(double correctAnswer, int width, int length)throws TempleMenuControlException {
+    public void askComplexQuestion3(double correctAnswer, int width, int length)throws TempleMenuControlException {
         
           if (!(width >= 1 && width <= 484))
               throw new TempleMenuControlException("Error in Height value");
@@ -102,13 +102,9 @@ public class TempleMenuControl {
           
           if (testAnswer == correctAnswer) 
               throw new TempleMenuControlException("The answer was correct");
-          {
-              return 0;
-          }
+          
           if(!(testAnswer == correctAnswer))
               throw new TempleMenuControlException("The answer was incorrect");
-          {
-              return 1;
-          }
+
     }
 }

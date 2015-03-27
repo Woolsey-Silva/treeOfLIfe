@@ -15,7 +15,7 @@ public class InventoryControl {
             backpack.add(item);
         }
         else {
-            System.out.println("SORRY! The item was no added to your backpack"
+            System.out.println("SORRY! The item was not added to your backpack"
                     + "\nbecause there is no more room in your backpack! Please"
                     + "\nempty/forge some items and try again!");
         }

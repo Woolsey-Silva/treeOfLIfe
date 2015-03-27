@@ -1,9 +1,15 @@
 package byui.cit260.TreeOfLife.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import tree.of.life.TreeOfLife;
 
 public abstract class View implements ViewInterface {
     private String promptMessage;
+    
+    protected final BufferedReader keyboard = TreeOfLife.getInFile();
+    protected final PrintWriter console = TreeOfLife.getOutFile();
     
     public View(String promptMessage) {
         this.promptMessage = promptMessage;
@@ -19,26 +25,28 @@ public abstract class View implements ViewInterface {
     
     @Override
     public void display() {
-            System.out.println(this.promptMessage);
+            this.console.println(this.promptMessage);
     }
     
     @Override
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
         String selection = null;
-        
-        while (!valid) {
-            System.out.println("\t\nEnter your selection below:");
+        try{
+            while (!valid) {
+                this.console.println("\t\nEnter your selection below:");
             
-            selection = keyboard.nextLine();
-            selection = selection.trim();
+                selection = this.keyboard.readLine();
+                selection = selection.trim();
             
-            if (selection.length() < 1) {
-                System.out.println("\n*** Invalid selection! Please try again! ***");
-                continue;
-            }
-            break;
+                if (selection.length() < 1) {
+                    ErrorView.display(this.getClass().getName(), "\n*** Invalid selection! Please try again! ***");
+                    continue;
+                }
+                break;
+            } 
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), ("Error reading input: " + e.getMessage()));
         }
         return selection;
     }

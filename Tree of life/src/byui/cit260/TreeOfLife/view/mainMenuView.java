@@ -2,6 +2,15 @@
 package byui.cit260.TreeOfLife.view;
 
 import byui.cit260.TreeOfLife.control.GameControl;
+import byui.cit260.TreeOfLife.exceptions.MapControlException;
+import byui.cit260.TreeOfLife.model.Player;
+import byui.cit260.TreeOfLife.model.Character;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import tree.of.life.TreeOfLife;
 
 public class mainMenuView extends View {
@@ -16,6 +25,8 @@ public class mainMenuView extends View {
             +"\nH - Get help on how to play the game"
             +"\nS - Save"
             +"\nE - Exit"
+            +"\nC - Print Characters to a file"
+            +"\nL - Print Location of player to a file"
             +"\n----------------------------------------------");
     }
 
@@ -28,7 +39,13 @@ public class mainMenuView extends View {
         
         switch (choice){
             case 'N':
+        {
+            try {
                 this.startNewgame();
+            } catch (MapControlException ex) {
+                Logger.getLogger(mainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 'G':
                 this.startExistingGame();
@@ -42,14 +59,23 @@ public class mainMenuView extends View {
             case 'E':
                 return;
             default:
-                System.out.println("\n**** invalid selection ***** try again");
+                ErrorView.display(this.getClass().getName(), "\n**** invalid selection ***** try again");
                 break;
         }
     }  
 
     private void saveGame() {
-        System.out.println("saveGame() FUNCTION WAS CALLED! THIS FUNCTION NEEDS"
-                + "\nTO BE FINISHED!");
+        //Prompt for and get the name of the file to save the game in
+        this.console.println("\n\nEnter the filepath for file where the game"
+                + "is to be saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.saveGame(TreeOfLife.getGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
     private void displayHelpMenu() {
@@ -58,18 +84,30 @@ public class mainMenuView extends View {
     }
 
     private void startExistingGame() {
-        System.out.println("startExistingGame() FUNCTION WAS CALLED! THIS"
-                + "\nFUNCTION NEEDS TO BE FINISHED!");
+        this.console.println("\n\nEnter the file path for file where the game"
+                + "is to be pulled from.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("Main MenuView", filePath);
+        }
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+        
     }
 
-    private void startNewgame() {
+    private void startNewgame() throws MapControlException {
         
         // IMPLEMENT THE CHOOSECHARACTERVIEW()
         
         GameControl.createNewGame(TreeOfLife.getPlayer());
         
         
-        System.out.println("\n\n\nYou awake in a large, dark, and dreary"
+        this.console.println("\n\n\nYou awake in a large, dark, and dreary"
             + "\nwilderness. You see a group of people holding onto a rod made of"
             + "\niron heading towards a great source of light on the horizon. You"
             + "\nsee a sign in front of you. It reads:"

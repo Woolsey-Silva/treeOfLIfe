@@ -1,5 +1,6 @@
 package byui.cit260.TreeOfLife.control;
 
+import byui.cit260.TreeOfLife.exceptions.GameControlException;
 import byui.cit260.TreeOfLife.exceptions.MapControlException;
 import byui.cit260.TreeOfLife.model.Armor;
 import byui.cit260.TreeOfLife.model.Game;
@@ -11,6 +12,12 @@ import byui.cit260.TreeOfLife.model.Player;
 import byui.cit260.TreeOfLife.model.Question;
 import byui.cit260.TreeOfLife.model.Scene;
 import byui.cit260.TreeOfLife.view.CharacterSelectView;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import tree.of.life.TreeOfLife;
 
@@ -132,8 +139,37 @@ public class GameControl {
         locations[4][4].setItemInLocation(Item.IngotOfFaith);
     }
 
-    
-    
+    public static void saveGame(Game game, String filePath) 
+            throws GameControlException{
+        try( FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+                
+            output.writeObject(game); // write the game object out to file
+        }
+        catch(IOException e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }   
+
+    public static void getSavedGame(String filePath) 
+            throws GameControlException{
+        Game game = null;
+        
+        try( FileInputStream fips = new FileInputStream(filePath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();
+        }
+        catch(FileNotFoundException fnfe) {
+            throw new GameControlException(fnfe.getMessage());
+        }
+        catch (Exception e) {
+            throw new GameControlException (e.getMessage());
+        }
+        
+        // close the output file
+        TreeOfLife.setCurrentGame(game); // save in TreeOfLife
+    }
 }
 
 

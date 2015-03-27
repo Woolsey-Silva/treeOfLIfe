@@ -13,67 +13,34 @@ import java.util.Scanner;
  *
  * @author ENTELLiJENSE
  */
-public class TempleMenuView {
-    
-    private final String MENU = "\n"
+public class TempleMenuView extends View{
+    public TempleMenuView() {
+        super("\n"
             +"\n----------------------------------------------"
             +"\n| Temple Menu Questions                      |"
             +"\n|---------------------------------------------"
             +"\n|G - Get Question                            |"
             +"\n|S - Skip Question                           |"
             +"\n|E - Exit                                    |"
-            +"\n----------------------------------------------";
+            +"\n----------------------------------------------");
+    } 
     
-    void displayMenu() {
-       char selection = ' ';
-       do {
-           System.out.println(MENU);
-           String input = this.getInput();
-           selection = input.charAt(0);
-           
-           
-           this.doAction(selection);
-       }while (selection != 'E');
-       
-    }
-    public String getInput() {
-         boolean valid = false;
-         String input = null;
-         Scanner keyboard = new Scanner(System.in);
-         
-         while(!valid) {
-            System.out.println("What would you like to do?: ");
-            
-            input =keyboard.nextLine();
-            input = input.trim();
-            
-            if(input.length()<1) {
-             System.out.println("invalid Input - The input must not be blank");
-            }
-            break;
-        }
-         return input;
-    }
-    public void doAction(char choice) {
-        
+    @Override
+    public void doAction(String choice) {
         switch (choice){
-            case 'G':
+            case "G":
                 this.askQuestionView();
                 break;
-            case 'E':
+            case "E":
                 return;
             default:
-                System.out.println("\n**** invalid selection ***** try again");
-                break;
-                
-            
-                
+                ErrorView.display(this.getClass().getName(), "\n**** invalid selection ***** try again");
+                break;        
         }
-    }  
-
-        private void askQuestionView() {
-           askQuestionView askQuestion = new askQuestionView();
-           askQuestion.display();
-        }
-   
     }
+
+    private void askQuestionView() {
+        askQuestionView askQuestion = new askQuestionView();
+        askQuestion.display();
+    }
+}
