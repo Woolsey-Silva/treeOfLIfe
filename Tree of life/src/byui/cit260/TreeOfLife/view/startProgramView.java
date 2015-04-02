@@ -8,6 +8,7 @@ package byui.cit260.TreeOfLife.view;
 import byui.cit260.TreeOfLife.control.ProgramControl;
 import byui.cit260.TreeOfLife.model.Player;
 import java.util.Scanner;
+import tree.of.life.TreeOfLife;
 
 public class startProgramView extends View{
     public startProgramView() {

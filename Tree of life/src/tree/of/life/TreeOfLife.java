@@ -45,6 +45,11 @@ public class TreeOfLife {
             TreeOfLife.logFile = new PrintWriter(filePath);
         
             // create StartProgramView and start the program
+            Player player = TreeOfLife.getPlayer();
+            int col = player.getColCount();
+            int row = player.getRowCount();
+            System.out.println("RowCount: " + row);
+            System.out.println("ColCount: " + col);
             startProgramView startProgramView = new startProgramView();
             startProgramView.display();
             startProgramView.startProgram();
