@@ -2,12 +2,15 @@ package byui.cit260.TreeOfLife.view;
 
 import byui.cit260.TreeOfLife.control.GameControl;
 import byui.cit260.TreeOfLife.control.InventoryControl;
+import byui.cit260.TreeOfLife.control.MapControl;
 import byui.cit260.TreeOfLife.control.forgeArmor;
+import byui.cit260.TreeOfLife.exceptions.MapControlException;
 import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Item;
 import byui.cit260.TreeOfLife.model.Map;
 import byui.cit260.TreeOfLife.model.Player;
 import java.io.PrintWriter;
+import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import java.util.Scanner;
 import tree.of.life.TreeOfLife;
@@ -21,14 +24,12 @@ public class GameMenuView extends View {
             +"\n|H - Get help on how to play the game        |"
             +"\n|V - View Inventory                          |"
             +"\n|G - View all game items                     |"
-            +"\n|M - Show Map (Begin Game)                   |"
+            +"\n|X - Show Map                                |"
+            +"\n|M - Move Location on Map (Begin Game)       |"
+            +"\n|F - Set up the forge                        |"
+            +"\n|A - Answer question in current location     |"
             +"\n|S - Save Game                               |"
             +"\n|E - Exit Game                               |"
-            +"\n|T - TestingOnly Add item to inventory       |"
-            +"\n|Z - TestingOnly Search for item in inventory|"
-            +"\n|Y - TestingOnly ForgeItem                   |"
-            +"\n|L - Print Location to file                  |"
-            +"\n|C - Print Character to file                 |"
             +"\n----------------------------------------------");
     }
     
@@ -44,29 +45,23 @@ public class GameMenuView extends View {
             case "G":
                 this.viewGameItems();
                 break;
-            case "M":
+            case "X":
                 this.showMap();
+                break;
+            case "M":
+                this.move();
+                break;
+            case "F":
+                this.setUpForge();
+                break;
+            case "A":
+                this.answer();
                 break;
             case "S":
                 this.saveGame();
                 break;
             case "E":
                 return;
-            case "T":
-                this.addItem();
-                break;
-            case "Z":
-                this.searchItem();
-                break;
-            case "Y":
-                this.forgeItem();
-                break;
-            case "C":
-                this.printChar();
-                break;
-            case "L":
-                this.printLoc();
-                break;
             default:
                 ErrorView.display(this.getClass().getName(), "\nINVALID SELECTION! Try again!");
                 break;
@@ -89,9 +84,6 @@ public class GameMenuView extends View {
         while (!(choice.equals("E"))) {
             Game game = TreeOfLife.getGame();
             ArrayList<Item> inventory = game.getBackpack();
-            
-            inventory.add(Item.IngotOfFaith);
-            
             inventoryItemView.display();
             
             for (Item i : inventory) {
@@ -128,9 +120,26 @@ public class GameMenuView extends View {
     private void showMap() {
         MapView mapView = new MapView();
         mapView.display();
-        mapView.displayMap();
+        mapView.displayMap();    
+    }
+    
+    private void move() {
+        MapControl mapControl = new MapControl();
         
+        // Prompt the user for col location to move to and parseInt from String
+        this.console.println("Enter the col you would like to move to!");
+        String colStr = this.getInput();
+        int col = Integer.parseInt(colStr);
         
+        this.console.println("Enter the row you would like to move to!");
+        String rowStr = this.getInput();
+        int row = Integer.parseInt(rowStr);
+        
+        try {
+            mapControl.move(row, col);
+        }
+        catch (Exception e) {    
+        }
     }
 
     private void saveGame() {
@@ -145,22 +154,6 @@ public class GameMenuView extends View {
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
-    }
-
-    private void addItem() {
-        InventoryControl inventoryControl = new InventoryControl();
-        inventoryControl.addItem(Item.IngotOfFaith);
-    }
-
-    private void searchItem() {
-        InventoryControl inventoryControl = new InventoryControl();
-        inventoryControl.searchItem(Item.IngotOfRighteousness);
-        inventoryControl.searchItem(Item.IngotOfFaith);
-    }
-
-    private void forgeItem() {
-        forgeArmor forgeArmor = new forgeArmor();
-        forgeArmor.setUp();
     }
     
     private void printLoc() {
@@ -210,5 +203,13 @@ public class GameMenuView extends View {
                                "\nMessage: " + e.getMessage()));
             e.printStackTrace();;
         }
+    }
+
+    private void answer() {
+        this.console.println("Finish this function!");
+    }
+
+    private void setUpForge() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

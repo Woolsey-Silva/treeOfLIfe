@@ -5,8 +5,6 @@ import java.io.Serializable;
 
 public enum Item implements Serializable{
     // Reference: Item.GoldIngots = Item[0]
-    IngotOfFaith("Gold Ingots","A golden Ingot", 3, "Contr-Category"),
-    IngotOfRighteousness("Silver Ingots", "A silver Ingot", 3, "Contr-Category"),
     CTRRING("Simple Ring", "A CTR Ring", 2, "Faith");
     
     private final String name;

@@ -19,9 +19,6 @@ public class forgeArmor {
         ArrayList<Item> backpack = game.getBackpack();
         int count = 1;
         
-        // FOR TESTING PURPOSES ONLY! REMOVE AFTER TESTING/DEBUGGING!
-        backpack.add(Item.CTRRING);
-        
         for (Item i : backpack) {
             Contribution contribution = i.getContribution();
             double itemAmount = contribution.getAmount();
@@ -48,7 +45,7 @@ public class forgeArmor {
             switch (itemCat.charAt(0)) {
                 case 'F':
                     while (itemsToAdd < itemAmount){
-                        inventoryControl.addItem(Item.IngotOfFaith);
+                        inventoryControl.addItem(Item.CTRRING);
                         itemsToAdd++;
                     }
                     System.out.println("Ingot of Faith x" + itemAmount 
@@ -56,7 +53,7 @@ public class forgeArmor {
                     break;
                 case 'R':
                     while (itemsToAdd < itemAmount){
-                        inventoryControl.addItem(Item.IngotOfRighteousness);
+                        inventoryControl.addItem(Item.CTRRING);
                         itemsToAdd++;
                     }
                     System.out.println("Ingot of Righteousness x" + itemAmount 

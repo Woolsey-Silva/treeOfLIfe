@@ -6,12 +6,12 @@ import java.util.ArrayList;
 public class Game implements Serializable{
 
     private int gameTime;
-    private int faith;
-    private int obedience;
-    private int knowledge;
-    private int honesty;
-    private int righteousness;
-    private int virtue;
+    private int IngotOfFaith;
+    private int IngotOfObedience;
+    private int IngotOfKnowledge;
+    private int IngotOfHonesty;
+    private int IngotOfRighteousness;
+    private int IngotOfVirtue;
     
     private Player player;
     private ArrayList<Item> backpack;
@@ -24,12 +24,12 @@ public class Game implements Serializable{
     public int hashCode() {
         int hash = 3;
         hash = 71 * hash + this.gameTime;
-        hash = 71 * hash + this.faith;
-        hash = 71 * hash + this.obedience;
-        hash = 71 * hash + this.knowledge;
-        hash = 71 * hash + this.honesty;
-        hash = 71 * hash + this.righteousness;
-        hash = 71 * hash + this.virtue;
+        hash = 71 * hash + this.IngotOfFaith;
+        hash = 71 * hash + this.IngotOfObedience;
+        hash = 71 * hash + this.IngotOfKnowledge;
+        hash = 71 * hash + this.IngotOfHonesty;
+        hash = 71 * hash + this.IngotOfRighteousness;
+        hash = 71 * hash + this.IngotOfVirtue;
         return hash;
     }
 
@@ -45,22 +45,22 @@ public class Game implements Serializable{
         if (this.gameTime != other.gameTime) {
             return false;
         }
-        if (this.faith != other.faith) {
+        if (this.IngotOfFaith != other.IngotOfFaith) {
             return false;
         }
-        if (this.obedience != other.obedience) {
+        if (this.IngotOfObedience != other.IngotOfObedience) {
             return false;
         }
-        if (this.knowledge != other.knowledge) {
+        if (this.IngotOfKnowledge != other.IngotOfKnowledge) {
             return false;
         }
-        if (this.honesty != other.honesty) {
+        if (this.IngotOfHonesty != other.IngotOfHonesty) {
             return false;
         }
-        if (this.righteousness != other.righteousness) {
+        if (this.IngotOfRighteousness != other.IngotOfRighteousness) {
             return false;
         }
-        if (this.virtue != other.virtue) {
+        if (this.IngotOfVirtue != other.IngotOfVirtue) {
             return false;
         }
         return true;
@@ -68,7 +68,7 @@ public class Game implements Serializable{
 
     @Override
     public String toString() {
-        return "Game{" + "gameTime=" + gameTime + ", faith=" + faith + ", obedience=" + obedience + ", knowledge=" + knowledge + ", honesty=" + honesty + ", righteousness=" + righteousness + ", virtue=" + virtue + '}';
+        return "Game{" + "gameTime=" + gameTime + ", faith=" + IngotOfFaith + ", obedience=" + IngotOfObedience + ", knowledge=" + IngotOfKnowledge + ", honesty=" + IngotOfHonesty + ", righteousness=" + IngotOfRighteousness + ", virtue=" + IngotOfVirtue + '}';
     }
 
     public Game() {
@@ -83,51 +83,51 @@ public class Game implements Serializable{
     }
 
     public int getFaith() {
-        return faith;
+        return IngotOfFaith;
     }
 
     public void setFaith(int faith) {
-        this.faith = faith;
+        this.IngotOfFaith = faith;
     }
 
     public int getObedience() {
-        return obedience;
+        return IngotOfObedience;
     }
 
     public void setObedience(int obedience) {
-        this.obedience = obedience;
+        this.IngotOfObedience = obedience;
     }
 
     public int getKnowledge() {
-        return knowledge;
+        return IngotOfKnowledge;
     }
 
     public void setKnowledge(int knowledge) {
-        this.knowledge = knowledge;
+        this.IngotOfKnowledge = knowledge;
     }
 
     public int getHonesty() {
-        return honesty;
+        return IngotOfHonesty;
     }
 
     public void setHonesty(int honesty) {
-        this.honesty = honesty;
+        this.IngotOfHonesty = honesty;
     }
 
     public int getRighteousness() {
-        return righteousness;
+        return IngotOfRighteousness;
     }
 
     public void setRighteousness(int righteousness) {
-        this.righteousness = righteousness;
+        this.IngotOfRighteousness = righteousness;
     }
 
     public int getVirtue() {
-        return virtue;
+        return IngotOfVirtue;
     }
 
     public void setVirtue(int virtue) {
-        this.virtue = virtue;
+        this.IngotOfVirtue = virtue;
     }
 
     public Player getPlayer() {

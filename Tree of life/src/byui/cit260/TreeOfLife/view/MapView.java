@@ -10,6 +10,7 @@ import byui.cit260.TreeOfLife.control.forgeArmor;
 import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Location;
 import byui.cit260.TreeOfLife.model.Map;
+import byui.cit260.TreeOfLife.model.Player;
 import tree.of.life.TreeOfLife;
 
 public class MapView extends View{
@@ -61,8 +62,21 @@ public class MapView extends View{
                 Location location = locations[i][j];
                 boolean isVisited = location.isVisited();
                 
+                Player player = TreeOfLife.getPlayer();
+                int playerCol = player.getColCount();
+                int playerRow = player.getRowCount();
+                
+                //IF the player is in the location
+                if (playerRow == i && playerCol == j && j == 4) {
+                    this.console.println("[X]");
+                }
+                
+                else if (playerRow == i && playerCol == j) {
+                    this.console.printf("[X]");
+                }
+               
                 //IF location has been visited
-                if(isVisited) {
+                else if (isVisited) {
                     if (j == 4){
                         this.console.println("[*]");
                     }

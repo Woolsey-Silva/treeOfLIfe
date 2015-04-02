@@ -5,6 +5,9 @@
  */
 package byui.cit260.TreeOfLife.view;
 
+import byui.cit260.TreeOfLife.model.Game;
+import tree.of.life.TreeOfLife;
+
 /**
  *
  * @author Caleb
@@ -32,14 +35,19 @@ public class CharacterSelectView extends View {
                 this.chooseNephi();
                 break;
             case "J":
+                this.chooseJacob();
                 break;
             case "S":
+                this.chooseSam();
                 break;
             case "L":
+                this.chooseLaman();
                 break;
             case "Z":
+                this.chooseZoram();
                 return;
             case "D":
+                this.chooseLehi();
                 break;
             default:
                 ErrorView.display(this.getClass().getName(), "\nINVALID SELECTION! Try again!");
@@ -48,6 +56,32 @@ public class CharacterSelectView extends View {
     }
 
     private void chooseNephi() {
-        
+        Game game = TreeOfLife.getGame();
+        game.setObedience(3);
+    }
+
+    private void chooseJacob() {
+        Game game = TreeOfLife.getGame();
+        game.setHonesty(3);
+    }
+
+    private void chooseSam() {
+        Game game = TreeOfLife.getGame();
+        game.setVirtue(3);
+    }
+
+    private void chooseLaman() {
+        Game game = TreeOfLife.getGame();
+        game.setKnowledge(3);
+    }
+
+    private void chooseZoram() {
+        Game game = TreeOfLife.getGame();
+        game.setFaith(3);
+    }
+
+    private void chooseLehi() {
+        Game game = TreeOfLife.getGame();
+        game.setRighteousness(3);
     }
 }
