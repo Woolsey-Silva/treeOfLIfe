@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 public enum Question implements Serializable{
     
-    question1("QUESTION!", "ANSWER!"),
+    question1("What is the answer to the universe?", "Blue 42"),
     question2("QUESTION!", "ANSWER!"),
     question3("QUESTION!", "ANSWER!"),
     question4("QUESTION!", "ANSWER!"),

@@ -14,6 +14,11 @@ public class Player implements Serializable{
     
      public Player() {
     }
+    
+    public Player(int row, int col) {
+        this.colCount = col;
+        this.rowCount = row;
+    }
 
     @Override
     public int hashCode() {

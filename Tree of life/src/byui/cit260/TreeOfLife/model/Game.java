@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class Game implements Serializable{
 
+    private int answerCounter;
     private int gameTime;
     private int IngotOfFaith;
     private int IngotOfObedience;
@@ -157,4 +158,6 @@ public class Game implements Serializable{
     public Armor[] getArmor() {
         return armor;
     } 
+    
+    
 }

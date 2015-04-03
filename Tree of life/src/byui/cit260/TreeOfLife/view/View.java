@@ -38,6 +38,7 @@ public abstract class View implements ViewInterface {
             
                 selection = this.keyboard.readLine();
                 selection = selection.trim();
+                selection = selection.toUpperCase();
             
                 if (selection.length() < 1) {
                     ErrorView.display(this.getClass().getName(), "\n*** Invalid selection! Please try again! ***");

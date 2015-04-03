@@ -34,11 +34,9 @@ public class mainMenuView extends View {
     
     @Override
     public void doAction(String value) {
-        value = value.toUpperCase();
-        char choice = value.charAt(0);
-        
-        switch (choice){
-            case 'N':
+
+        switch (value){
+            case "N":
         {
             try {
                 this.startNewgame();
@@ -47,16 +45,16 @@ public class mainMenuView extends View {
             }
         }
                 break;
-            case 'G':
+            case "G":
                 this.startExistingGame();
                 break;
-            case 'H':
+            case "H":
                 this.displayHelpMenu();
                 break;
-            case 'S':
+            case "S":
                 this.saveGame();
                 break;
-            case 'E':
+            case "E":
                 return;
             default:
                 ErrorView.display(this.getClass().getName(), "\n**** invalid selection ***** try again");

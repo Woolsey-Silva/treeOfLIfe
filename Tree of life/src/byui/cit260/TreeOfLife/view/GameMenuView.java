@@ -210,6 +210,6 @@ public class GameMenuView extends View {
     }
 
     private void setUpForge() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.console.println("FINISH THIS FUNCTION!");
     }
 }
