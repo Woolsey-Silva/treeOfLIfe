@@ -29,6 +29,10 @@ public class askQuestionView extends View {
             +"\n---------------------------------------------------");
     }
     
+    public askQuestionView(String question) {
+        super (question);
+    }
+    
       
     @Override
     public void doAction(String choice) {

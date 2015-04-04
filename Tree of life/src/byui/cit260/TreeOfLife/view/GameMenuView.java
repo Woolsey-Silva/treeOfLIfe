@@ -7,8 +7,10 @@ import byui.cit260.TreeOfLife.control.forgeArmor;
 import byui.cit260.TreeOfLife.exceptions.MapControlException;
 import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Item;
+import byui.cit260.TreeOfLife.model.Location;
 import byui.cit260.TreeOfLife.model.Map;
 import byui.cit260.TreeOfLife.model.Player;
+import byui.cit260.TreeOfLife.model.Question;
 import java.io.PrintWriter;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
@@ -209,7 +211,51 @@ public class GameMenuView extends View {
     }
 
     private void answer() {
+        // Obtain the games locations
+        Game game = TreeOfLife.getGame();
+        Map map = game.getMap();
+        Location[][] location = map.getLocations();
+        
+        // Obtain the players current location
+        Player player = game.getPlayer();
+        int playerCol = player.getColCount();
+        int playerRow = player.getRowCount();
         this.console.println("Finish this function!");
+        
+        // Get the question from the current location of the player
+        Question questionWhole = location[playerRow][playerCol].getQuestionInLocation();
+        
+        // Get the question from the question object
+        String question = questionWhole.getQuestion();
+        
+        // Ask the question to the user
+        askQuestionView askQuestion = new askQuestionView(question);
+        
+        // Prompt the user for the answer
+        String userAnswer = this.getInput();
+        
+        // Get the actual answer from the question object
+        String actualAnswer = questionWhole.getAnswer();
+        
+        // Setup for counter
+        for (int i = 0; i < 3; i++){
+            // Test userAnswer vs actualAnswer
+            if (userAnswer == actualAnswer) {
+                // stop the for loop
+                i = 3;
+                
+                // If answer is correct award item
+                
+            }
+            else {
+                this.console.println("Sorry the answer is incorrect! Try again!");
+            }
+        }
+        
+        // If answer is not correct, retry (2 more times)
+        
+        // if answer is not correct after 3 tries, display failure and move on
+        
     }
 
     private void setUpForge() {
