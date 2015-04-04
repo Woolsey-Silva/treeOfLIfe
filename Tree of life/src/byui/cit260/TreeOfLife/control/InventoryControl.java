@@ -48,12 +48,23 @@ public class InventoryControl {
             count++;
         }
         
-        if (count <= 15) {
+        if (count <= 10) {
             return true;
         }
         
         else {
            return false;
         } 
+    }
+
+    void removeItem(Item item) {
+        Game game = TreeOfLife.getGame();
+        ArrayList<Item> backpack = game.getBackpack();
+        
+        for (Item i : backpack) {
+            if (item == i) {
+                backpack.remove(item);
+            }
+        }
     }
 }

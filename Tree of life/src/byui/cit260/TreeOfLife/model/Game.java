@@ -19,6 +19,7 @@ public class Game implements Serializable{
     private Item[] gameItems;
     private Map map;
     private Armor[] armor;
+    private ArrayList<Armor> armorObtained;
     
     
     @Override
@@ -158,6 +159,16 @@ public class Game implements Serializable{
     public Armor[] getArmor() {
         return armor;
     } 
+
+    public ArrayList<Armor> getArmorObtained() {
+        return armorObtained;
+    }
+
+    public void setArmorObtained(ArrayList<Armor> armorObtained) {
+        this.armorObtained = armorObtained;
+    }
+    
+    
     
     
 }

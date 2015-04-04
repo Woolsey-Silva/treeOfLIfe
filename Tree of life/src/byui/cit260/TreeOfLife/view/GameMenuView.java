@@ -62,6 +62,9 @@ public class GameMenuView extends View {
                 break;
             case "E":
                 return;
+            case "T":
+                this.addItem();
+                break;
             default:
                 ErrorView.display(this.getClass().getName(), "\nINVALID SELECTION! Try again!");
                 break;
@@ -210,6 +213,13 @@ public class GameMenuView extends View {
     }
 
     private void setUpForge() {
-        this.console.println("FINISH THIS FUNCTION!");
+        ForgeView forge = new ForgeView();
+        forge.display();
+        String choice = forge.getInput();
+        forge.doAction(choice);
+    }
+
+    private void addItem() {
+        
     }
 }
