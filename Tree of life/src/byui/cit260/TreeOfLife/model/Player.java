@@ -12,7 +12,7 @@ public class Player implements Serializable{
     private int colCount;
     private int rowCount;
     
-     public Player() {
+    public Player() {
     }
     
     public Player(int row, int col) {

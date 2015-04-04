@@ -72,7 +72,7 @@ public class forgeArmor {
                 attribute = game.getVirtue();
                 if (attribute < 10) {
                     System.out.println("Sorry you do not have enough Ingots to"
-                            + "create that armor peice!");
+                            + "create that armor piece!");
                 }
                 else {
                     armorObtained.add(Armor.beltOfVirtue);
