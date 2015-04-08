@@ -220,7 +220,6 @@ public class GameMenuView extends View {
         Player player = game.getPlayer();
         int playerCol = player.getColCount();
         int playerRow = player.getRowCount();
-        this.console.println("Finish this function!");
         
         // Get the question from the current location of the player
         Question questionWhole = location[playerRow][playerCol].getQuestionInLocation();
