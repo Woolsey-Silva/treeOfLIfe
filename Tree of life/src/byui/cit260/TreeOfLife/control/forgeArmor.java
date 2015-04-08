@@ -93,7 +93,7 @@ public class forgeArmor {
                 break;
                 
             case "E":
-                break;
+                return;
             default:
                 System.out.println("Error! The input was invalid! Please "
                         + "re-enter input!");
@@ -113,6 +113,8 @@ public class forgeArmor {
         
         InventoryControl inventoryControl = new InventoryControl();
         
+        ArrayList toRemove = new ArrayList();
+        
         for (Item i : backpack) {
             // Obtain the attributes to add
             Contribution contribution = i.getContribution();
@@ -125,48 +127,42 @@ public class forgeArmor {
                     faithToAdd += itemAmount;
                     // remove item from inventory
                     Item item = i;
-                    inventoryControl.removeItem(item);
-                
+                    toRemove.add(i);
                     break;
                 case 'H':
                     // add the faith to the amount to add
                     honestyToAdd += itemAmount;
                     // remove item from inventory
                     item = i;
-                    inventoryControl.removeItem(item);
-                
+                    toRemove.add(i);
                     break;
                 case 'O':
                     // add the faith to the amount to add
                     obedienceToAdd += itemAmount;
                     // remove item from inventory
                     item = i;
-                    inventoryControl.removeItem(item);
-                
+                    toRemove.add(i);
                     break;
                 case 'V':
                     // add the faith to the amount to add
                     virtueToAdd += itemAmount;
                     // remove item from inventory
                     item = i;
-                    inventoryControl.removeItem(item);
-                
+                    toRemove.add(i);
                     break;
                 case 'R':
                     // add the faith to the amount to add
                     righteousnessToAdd += itemAmount;
                     // remove item from inventory
                     item = i;
-                    inventoryControl.removeItem(item);
-                
+                    toRemove.add(i);
                     break;
                 case 'K':
                     // add the faith to the amount to add
                     knowledgeToAdd += itemAmount;
                     // remove item from inventory
                     item = i;
-                    inventoryControl.removeItem(item);
-          
+                    toRemove.add(i);
                     break;
              
                 default:
@@ -174,6 +170,8 @@ public class forgeArmor {
                     break;
             }  
         }
+        
+        backpack.removeAll(toRemove);
         
         // get games attributes
         int IngotOfFaith = game.getFaith();
@@ -194,20 +192,20 @@ public class forgeArmor {
         // Tell the user how many Ingots that were added and how many they now
         // currently have
         System.out.println("Ingots of each type added: "
-                + "Ingots of Faith: " + faithToAdd + ""
-                + "Ingots of Obedience: " + obedienceToAdd + "" 
-                + "Ingots of Knowledge: " + knowledgeToAdd + ""
-                + "Ingots of Honesty: " + honestyToAdd + ""
-                + "Ingots of Righteousness: " + righteousnessToAdd + ""
-                + "Ingots of Virtue: " + virtueToAdd + ""
-                + "----------------------------------------------------"
-                + "You now currently have:"
-                + "Ingots of Faith: " + IngotOfFaith + ""
-                + "Ingots of Obedience: " + IngotOfObedience + "" 
-                + "Ingots of Knowledge: " + IngotOfKnowledge + ""
-                + "Ingots of Honesty: " + IngotOfHonesty + ""
-                + "Ingots of Righteousness: " + IngotOfRighteousness + ""
-                + "Ingots of Virtue: " + IngotOfVirtue + "");
+                + "\nIngots of Faith: " + faithToAdd + ""
+                + "\nIngots of Obedience: " + obedienceToAdd + "" 
+                + "\nIngots of Knowledge: " + knowledgeToAdd + ""
+                + "\nIngots of Honesty: " + honestyToAdd + ""
+                + "\nIngots of Righteousness: " + righteousnessToAdd + ""
+                + "\nIngots of Virtue: " + virtueToAdd + ""
+                + "\n----------------------------------------------------"
+                + "\nYou now currently have:"
+                + "\nIngots of Faith: " + IngotOfFaith + ""
+                + "\nIngots of Obedience: " + IngotOfObedience + "" 
+                + "\nIngots of Knowledge: " + IngotOfKnowledge + ""
+                + "\nIngots of Honesty: " + IngotOfHonesty + ""
+                + "\nIngots of Righteousness: " + IngotOfRighteousness + ""
+                + "\nIngots of Virtue: " + IngotOfVirtue + "");
         
         // Reset the games attributes
         game.setFaith(IngotOfFaith);

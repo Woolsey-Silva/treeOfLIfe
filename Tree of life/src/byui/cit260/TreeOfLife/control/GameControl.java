@@ -21,10 +21,6 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import tree.of.life.TreeOfLife;
 
-/**
- *
- * @author Caleb
- */
 public class GameControl {
 
     public static void createNewGame(Player player) throws MapControlException{

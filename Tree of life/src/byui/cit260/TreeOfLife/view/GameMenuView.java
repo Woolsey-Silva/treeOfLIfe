@@ -29,6 +29,7 @@ public class GameMenuView extends View {
             +"\n|X - Show Map                                |"
             +"\n|M - Move Location on Map (Begin Game)       |"
             +"\n|F - Set up the forge                        |"
+            +"\n|P - To view current progress                |"
             +"\n|A - Answer question in current location     |"
             +"\n|S - Save Game                               |"
             +"\n|E - Exit Game                               |"
@@ -62,11 +63,11 @@ public class GameMenuView extends View {
             case "S":
                 this.saveGame();
                 break;
+            case "P":
+                this.progress();
+                break;
             case "E":
                 return;
-            case "T":
-                this.addItem();
-                break;
             default:
                 ErrorView.display(this.getClass().getName(), "\nINVALID SELECTION! Try again!");
                 break;
@@ -220,7 +221,6 @@ public class GameMenuView extends View {
         Player player = game.getPlayer();
         int playerCol = player.getColCount();
         int playerRow = player.getRowCount();
-        /*this.console.println("Finish this function!");*/
         
         // Get the question from the current location of the player
         Question questionWhole = location[playerRow][playerCol].getQuestionInLocation();
@@ -229,33 +229,32 @@ public class GameMenuView extends View {
         String question = questionWhole.getQuestion();
         
         // Ask the question to the user
-        askQuestionView askQuestion = new askQuestionView(question);
-        
-        // Prompt the user for the answer
-        String userAnswer = this.getInput();
+        System.out.println(question);   
         
         // Get the actual answer from the question object
         String actualAnswer = questionWhole.getAnswer();
         
-        // Setup for counter
-        for (int i = 0; i < 3; i++){
-            // Test userAnswer vs actualAnswer
-            if (userAnswer == actualAnswer) {
-                // stop the for loop
-                i = 3;
+        // Prompt the user for the answer
+        String userAnswer = this.getInput();
+          
+        // Test userAnswer vs actualAnswer
+        if (userAnswer.equals(actualAnswer)) {
+        
+        // Get the item located in that location
+        Item item = location[playerRow][playerCol].getItemInLocation();
                 
-                // If answer is correct award item
-                
-            }
-            else {
-                this.console.println("Sorry the answer is incorrect! Try again!");
-            }
+        // Award the user the item
+        InventoryControl inventoryControl = new InventoryControl();
+        inventoryControl.addItem(item);
+        
+        // Display which item was added to the user!
+        System.out.println("Correct! " + item + " was added to your"
+               + "\ninventory!");
         }
-        
-        // If answer is not correct, retry (2 more times)
-        
-        // if answer is not correct after 3 tries, display failure and move on
-        
+        // Otherwise tell them the answer was wrong
+        else {
+             this.console.println("Sorry the answer is incorrect! Try again!");
+        }
     }
 
     private void setUpForge() {
@@ -265,7 +264,26 @@ public class GameMenuView extends View {
         forge.doAction(choice);
     }
 
-    private void addItem() {
+    private void progress() {
+        // Obtain the users current game
+        Game game = TreeOfLife.getGame();
+        
+        // From the game, obtain the users attributes
+        int IngotOfFaith = game.getFaith();
+        int IngotOfObedience = game.getObedience();
+        int IngotOfKnowledge = game.getKnowledge();
+        int IngotOfHonesty = game.getHonesty();
+        int IngotOfRighteousness = game.getRighteousness();
+        int IngotOfVirtue = game.getVirtue();
+        
+        // Tell the user how many Ingots they currently have
+        this.console.println("You now currently have:"
+                + "\nIngots of Faith: " + IngotOfFaith + ""
+                + "\nIngots of Obedience: " + IngotOfObedience + "" 
+                + "\nIngots of Knowledge: " + IngotOfKnowledge + ""
+                + "\nIngots of Honesty: " + IngotOfHonesty + ""
+                + "\nIngots of Righteousness: " + IngotOfRighteousness + ""
+                + "\nIngots of Virtue: " + IngotOfVirtue + "");
         
     }
 }

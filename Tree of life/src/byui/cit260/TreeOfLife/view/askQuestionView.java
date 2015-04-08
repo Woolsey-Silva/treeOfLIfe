@@ -12,22 +12,6 @@ import java.util.Scanner;
  * @author Caleb
  */
 public class askQuestionView extends View {
-    public askQuestionView() {
-        super("\n"
-            +"\n---------------------------------------------------"
-            +"\n| What is the verse of the scripture that reads:                                  |"
-            +"\n---------------------------------------------------"
-            +"\nAnd it came to pass that I, Nephi, said unto my    "
-            +"\nfather: I will go and do the things which the      "
-            +"\nLord hath commanded, for I know that the Lord      "
-            +"\ngiveth no commandments unto the children of men,   "
-            + "\nsave he shall prepare a way for them that they    "
-            + "\nmay accomplish the thing which he commandeth them "
-            + "\n                                                  "
-            + "\nS - skip this question                            "
-            + "\nE - Exit Questions                                "
-            +"\n---------------------------------------------------");
-    }
     
     public askQuestionView(String question) {
         super (question);
