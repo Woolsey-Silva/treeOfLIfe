@@ -4,6 +4,7 @@ import byui.cit260.TreeOfLife.model.Game;
 import byui.cit260.TreeOfLife.model.Item;
 import byui.cit260.TreeOfLife.model.Player;
 import java.util.ArrayList;
+import java.util.Iterator;
 import tree.of.life.TreeOfLife;
 
 public class InventoryControl {
@@ -61,10 +62,20 @@ public class InventoryControl {
         Game game = TreeOfLife.getGame();
         ArrayList<Item> backpack = game.getBackpack();
         
+        
+        ArrayList toRemove = new ArrayList();
         for (Item i : backpack) {
-            if (item == i) {
-                backpack.remove(item);
+            if (item.equals(i)) {
+                toRemove.add(i);
             }
         }
+        
+        backpack.removeAll(toRemove);
+        
+        /* for (Item i : backpack) {
+            if (item.equals(i)) {
+                backpack.remove(item);
+            }
+        } */
     }
 }

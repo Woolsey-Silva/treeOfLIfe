@@ -37,7 +37,7 @@ public class ForgeView extends View{
                 forgeArmor forge = new forgeArmor();
                 String input = " ";
                 
-                while (input != "E") {
+                while (!(input.equals("E"))) {
                     this.console.println(""
                     + "\n----------------------------------------------------------"
                     + "\n|You will need 10 ingots of the appropriate type in order|"
