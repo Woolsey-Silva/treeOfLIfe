@@ -41,7 +41,7 @@ public class TreeOfLife {
                     new PrintWriter(System.out, true);
             
             // open log file
-            String filePath = "C:/Users/Caleb/Desktop/log.txt";
+            String filePath = "/Users/ENTELLiJENSE/Desktop/log.txt";
             TreeOfLife.logFile = new PrintWriter(filePath);
         
             // create StartProgramView and start the program

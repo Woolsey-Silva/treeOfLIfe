@@ -57,27 +57,28 @@ public class GameControl {
         locations[0][2].setScene(Scene.Field);
         locations[0][3].setScene(Scene.Field);
         locations[0][4].setScene(Scene.Field);
-        locations[1][0].setScene(Scene.Field);
-        locations[1][1].setScene(Scene.Field);
-        locations[1][2].setScene(Scene.Field);
-        locations[1][3].setScene(Scene.Field);
-        locations[1][4].setScene(Scene.Field);
-        locations[2][0].setScene(Scene.Field);
-        locations[2][1].setScene(Scene.Field);
-        locations[2][2].setScene(Scene.Field);
-        locations[2][3].setScene(Scene.Field);
-        locations[2][4].setScene(Scene.Field);
-        locations[3][0].setScene(Scene.Field);
-        locations[3][1].setScene(Scene.Field);
-        locations[3][2].setScene(Scene.Field);
-        locations[3][3].setScene(Scene.Field);
-        locations[3][4].setScene(Scene.Field);
-        locations[4][0].setScene(Scene.Field);
-        locations[4][1].setScene(Scene.Field);
-        locations[4][2].setScene(Scene.Field);
-        locations[4][3].setScene(Scene.Field);
-        locations[4][4].setScene(Scene.Field); 
+        locations[1][0].setScene(Scene.Riverside);
+        locations[1][1].setScene(Scene.Riverside);
+        locations[1][2].setScene(Scene.Riverside);
+        locations[1][3].setScene(Scene.Riverside);
+        locations[1][4].setScene(Scene.Riverside);
+        locations[2][0].setScene(Scene.SpaciousBuilding);
+        locations[2][1].setScene(Scene.SpaciousBuilding);
+        locations[2][2].setScene(Scene.SpaciousBuilding);
+        locations[2][3].setScene(Scene.SpaciousBuilding);
+        locations[2][4].setScene(Scene.SpaciousBuilding);
+        locations[3][0].setScene(Scene.IronRodPath);
+        locations[3][1].setScene(Scene.IronRodPath);
+        locations[3][2].setScene(Scene.IronRodPath);
+        locations[3][3].setScene(Scene.IronRodPath);
+        locations[3][4].setScene(Scene.IronRodPath);
+        locations[4][0].setScene(Scene.TreeOfLife);
+        locations[4][1].setScene(Scene.TreeOfLife);
+        locations[4][2].setScene(Scene.TreeOfLife);
+        locations[4][3].setScene(Scene.TreeOfLife);
+        locations[4][4].setScene(Scene.TreeOfLife); 
     }
+
 
     static void assignQuestionsToLocation(Map map) {
         Location[][] locations = map.getLocations();
@@ -109,35 +110,37 @@ public class GameControl {
         locations[4][4].setQuestionInLocation(Question.question25);
     }
 
-    static void assignItemsToLocation(Map map) {
+        static void assignItemsToLocation(Map map) {
         Location[][] locations = map.getLocations();
         
         locations[0][0].setItemInLocation(Item.CTRRING);
-        locations[0][1].setItemInLocation(Item.CTRRING);
-        locations[0][2].setItemInLocation(Item.CTRRING);
-        locations[0][3].setItemInLocation(Item.CTRRING);
-        locations[0][4].setItemInLocation(Item.CTRRING);
-        locations[1][0].setItemInLocation(Item.CTRRING);
-        locations[1][1].setItemInLocation(Item.CTRRING);
-        locations[1][2].setItemInLocation(Item.CTRRING);
-        locations[1][3].setItemInLocation(Item.CTRRING);
-        locations[1][4].setItemInLocation(Item.CTRRING);
-        locations[2][0].setItemInLocation(Item.CTRRING);
-        locations[2][1].setItemInLocation(Item.CTRRING);
-        locations[2][2].setItemInLocation(Item.CTRRING);
-        locations[2][3].setItemInLocation(Item.CTRRING);
-        locations[2][4].setItemInLocation(Item.CTRRING);
-        locations[3][0].setItemInLocation(Item.CTRRING);
-        locations[3][1].setItemInLocation(Item.CTRRING);
-        locations[3][2].setItemInLocation(Item.CTRRING);
-        locations[3][3].setItemInLocation(Item.CTRRING);
-        locations[3][4].setItemInLocation(Item.CTRRING);
-        locations[4][0].setItemInLocation(Item.CTRRING);
-        locations[4][1].setItemInLocation(Item.CTRRING);
-        locations[4][2].setItemInLocation(Item.CTRRING);
-        locations[4][3].setItemInLocation(Item.CTRRING);
-        locations[4][4].setItemInLocation(Item.CTRRING);
+        locations[0][1].setItemInLocation(Item.LabansCape);
+        locations[0][2].setItemInLocation(Item.AmmonsSling);
+        locations[0][3].setItemInLocation(Item.GavilOfMosiah);
+        locations[0][4].setItemInLocation(Item.epistleOfHelaman);
+        locations[1][0].setItemInLocation(Item.PGofBIBLE);
+        locations[1][1].setItemInLocation(Item.MoronisTitleOfLiberty);
+        locations[1][2].setItemInLocation(Item.FeatherOfLimhisHeadBand);
+        locations[1][3].setItemInLocation(Item.ShardOfGideonsSwords);
+        locations[1][4].setItemInLocation(Item.GadiantonDagger);
+        locations[2][0].setItemInLocation(Item.nehpiBrokenBow);
+        locations[2][1].setItemInLocation(Item.StripplingWarriorsHeadband);
+        locations[2][2].setItemInLocation(Item.NecklaceOfKingNoah);
+        locations[2][3].setItemInLocation(Item.SeedsOfAlma);
+        locations[2][4].setItemInLocation(Item.SamuelStaff);
+        locations[3][0].setItemInLocation(Item.SpindleOfLiahona);
+        locations[3][1].setItemInLocation(Item.OlvieBranch);
+        locations[3][2].setItemInLocation(Item.ChainLInkOfAbinadi);
+        locations[3][3].setItemInLocation(Item.ChipOfLamonisDagger);
+        locations[3][4].setItemInLocation(Item.RubbleOfZerahemla);
+        locations[4][0].setItemInLocation(Item.BroJaredsStone);
+        locations[4][1].setItemInLocation(Item.KingBenBracelt);
+        locations[4][2].setItemInLocation(Item.BottleWatersOfMormon);
+        locations[4][3].setItemInLocation(Item.ChunkOfWood);
+        locations[4][4].setItemInLocation(Item.SacrementBaskter);
     }
+    
+
 
     public static void saveGame(Game game, String filePath) 
             throws GameControlException{
